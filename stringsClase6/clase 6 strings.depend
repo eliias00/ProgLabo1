@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1554855980 source:/home/alumno/troncoso/ProgLaboMauricio1/clase 6/clase 6 strings/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"nombre.h"
+
+1554855485 source:/home/alumno/troncoso/ProgLaboMauricio1/clase 6/clase 6 strings/nombre.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1554855293 /home/alumno/troncoso/ProgLaboMauricio1/clase 6/clase 6 strings/nombre.h
+
+1554948489 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\stringsclase6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"nombre.h"
+	<ctype.h>
+
+1554947171 c:\users\elias\onedrive\escritorio\proglabomauricio1\stringsclase6\nombre.h
+
+1554948439 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\stringsclase6\nombre.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
