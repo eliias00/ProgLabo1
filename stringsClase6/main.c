@@ -2,28 +2,18 @@
 #include <stdlib.h>
 #include <string.h>
 #include "nombre.h"
-#include <ctype.h>
-#define NOMBRE 20
-#define BUFFER 20
+#define CARACTERES 500
 
 int main()
 {
-     char nombre[NOMBRE];
-
-
-     getNumber("ingrese numeros: ","error",1,9,3,nombre);
-
-    /*    strncpy(nombre,nombre2,sizeof(nombre));
-
-        printf("\n%s",nombre);
-
-        fgets(nombre,sizeof(nombre),stdin);
-
-        printf("\n%s",nombre);
-
-        strlen();
-        strcmp();
-
-    */
+    char auxName[CARACTERES];
+    if(!getName("ingrese nombre: ","error",2,5,2,auxName))
+    {
+        printf("\nok:%s",auxName);
+    }
+    else
+    {
+        printf("\nerror:%s",auxName);
+    }
     return 0;
 }
