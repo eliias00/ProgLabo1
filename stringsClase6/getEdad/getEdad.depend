@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1555197203 source:/home/elias/Escritorio/ProgLaboMauricio1/stringsClase6/getEdad/main.c
+	<stdio.h>
+	<stdlib.h>
+	"edad.h"
+
+1555180420 /home/elias/Escritorio/ProgLaboMauricio1/stringsClase6/getEdad/edad.h
+
+1555186705 source:/home/elias/Escritorio/ProgLaboMauricio1/stringsClase6/getEdad/edad.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
