@@ -3,140 +3,94 @@
 #include <stdlib.h>
 #include <string.h>
 #include "utn.h"
+#include "validaciones.h"
 
-/*int getString ( char* msg,
-                char* msgError,
-                int minimo,
-                int maximo,
-                int reintentos,
-                char* resultado)
+void functionMenu(sEmpleados array [])
 {
-    int retorno = -1;
-    char bufferStr[4096];
+    int opcion;
+    char seguir;
+    int flag=0;
 
-
-    if(msg != NULL && msgError != NULL && minimo < maximo && reintentos>=0 && resultado != NULL)
+    do
     {
+        printf(":::::::::::::::::::::::::::\n");
+        printf(": 1) ALTAS    2)MODIFICAR :\n");
+        printf(": 3) BAJA     4)INFORMAR  :\n");
+        printf(":::::::::::::::::::::::::::\n");
 
-        do
+        printf("elija una opcion: ");
+        scanf("%d", & opcion);
+        switch(opcion)
         {
-            printf("%s",msg);
-            fgets(bufferStr,sizeof(bufferStr),stdin);
-            bufferStr[strlen(bufferStr)-1] = '\0';
-            if(strlen(bufferStr)>=minimo && strlen(bufferStr) <maximo)
+        case 1:
+            //  flag=1;
+            if(!buscarEspacioArray(array,EMPLEADOS))
             {
-                strncpy(resultado,bufferStr,maximo);
-                retorno = 0;
-                break;
+                getName("ingrese nombre: ","Reingrese el nombre:",1,20,5,array);
             }
-            reintentos--;
-            printf("%s",msgError);
-        }
-        while(reintentos>=0);
-    }
-    return retorno;
-}
-
-int getName (   char* msg,
-                char* msgError,
-                int minimo,
-                int maximo,
-                int reintentos,
-                char* resultado)
-{
-    int retorno = -1;
-    char bufferStr[4096];
-    if(msg != NULL && msgError != NULL && minimo < maximo && reintentos>=0 && resultado != NULL)
-    {
-        if(!getString(msg,msgError,minimo,maximo,reintentos,bufferStr))
-        {
-            if(isValidName(bufferStr))
+            else
             {
-                strncpy(resultado, bufferStr,maximo);
-                retorno = 0;
+                printf("no hay lugar");
             }
-        }
+            break;
 
-    }
-    return retorno;
-}
+        case 2:
 
-
-int isValidName (char* cadena)
-{
-    int retorno = TRUE;
-    int i;
-    for( i=0 ; cadena[i] != '\0'  ; i++)
-    {
-        if((cadena[i] > 'Z' || cadena[i] < 'A') && (cadena[i] > 'z' || cadena[i] < 'a')  )
-        {
-            retorno = FALSE;
+         //   funcionMostrarArray(array,EMPLEADOS);
             break;
         }
+        printf("\nQuiere volver al menu?\ns/Para continuar n/Para salir\n");
+        scanf("%s",&seguir);
+        system ("clear");
     }
-    return retorno;
-}*/
-int inicializarArray(char array [][20],int cant)
+    while(seguir =='s');
+}
+
+
+
+int inicializarArray(sEmpleados array[],int limite)
 {
     int i;
-
-    for(i=0; i<cant; i++)
+    for(i=0; i<limite; i++)
     {
-       strncpy(array[i],"\0", 20);
-    //  printf(":%s",array[i]);
-
+        array[i].isEmpty=VACIO;
+        printf("%d",array[i].isEmpty);
     }
     return 0;
 }
-int buscarEspacioArray(char array [][20],int cant)
+int buscarEspacioArray(sEmpleados array[],int limite)
 {
     int retorno;
-    int j;
-    for(j=0;j<cant;j++)
+    int i;
+    int aux=VACIO;
+
+    for(i=0; i<limite; i++)
     {
-
-        if(strcmp(array[j], "\0")==0)
+        if(array[i].isEmpty==VACIO)
         {
-          //  strncpy(array[j],"a", 20);
-
-          retorno=0;
-         //   break;
+             aux=i;
+             retorno=0;
+             break;
         }
         else
         {
             retorno =-1;
         }
-
     }
-      return retorno;
+    return retorno;
 }
-int agregarNombre(char array[][20],int cant)
-{
-    if(!buscarEspacioArray(array,cant))
-    {
-        printf("hay lugar");
-
-    }
-    else
-    {
-
-     printf("no hay lugar");
-    }
-return 0;
-}
-
-
-/*int funcionMostrarArray( char array[][20],int cant,char aux)
+/*int funcionMostrarArray(sEmpleados array[],int limite)
 {
     int i;
 
-    if (!buscarEspacioArray(array[][20],cant,aux))
+    for(i=0; i<limite; i++)
     {
-       for(i=0; i<cant; i++)
-       {
-        printf("%s",array[i]);
-       }
+        if(!strcmp(array[i], "\0")==0)
+        {
+            printf("\narray:%s",array[i]);
+        }
     }
+
 
     return 0;
 }*/

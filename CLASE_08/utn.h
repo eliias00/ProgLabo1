@@ -1,29 +1,20 @@
-#define TRUE 1
-#define FALSE 0
-
-int getString ( char* msg,
-                char* msgError,
-                int minimo,
-                int maximo,
-                int reintentos,
-                char* resultado);
-//-------------------------------------
-
-int getName (   char* msg,
-                char* msgError,
-                int minimo,
-                int maximo,
-                int reintentos,
-                char* resultado);
+#define EMPLEADOS 2
+#define CARACTERES 20
+#define VACIO -1
+typedef struct
+{
+    char nombre[EMPLEADOS];
+    char telefono[EMPLEADOS];
+    int isEmpty;
+} sEmpleados;
 
 
-int isValidName (char* cadena);
+int inicializarArray(sEmpleados array[],int limite);
 
+int buscarEspacioArray(sEmpleados array[],int limite);
 
-int inicializarArray(char array [][20],int cant);
+//int funcionMostrarArray(sEmpleados array[],int limite);
 
-int buscarEspacioArray(char array [][20],int cant);
+int altaNombre(sEmpleados array[],int limite);
 
-int funcionMostrarArray( char array[][20],int cant);
-
-int agregarNombre(char array[][20],int cant);
+void functionMenu(sEmpleados array[]);
