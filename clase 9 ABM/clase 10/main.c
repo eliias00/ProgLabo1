@@ -3,7 +3,7 @@
 #include "utn.h"
 #define VACIO 1
 #define LEN_LISTA  3
-
+///este es el posta
 int main()
 {
   /// empleado *auxliarEmpleado;
@@ -32,21 +32,17 @@ int main()
             {
                 if(!buscarLibre(auxEmpleado,LEN_LISTA,&posLibre))
                 {
-                    getName(&buffer,"\nINGRESE NOMBRE:","ERROR",1,10,1);
+                    getName(auxEmpleado[posLibre].nombre,"\nINGRESE NOMBRE:","ERROR",1,10,1);
                     fflush(stdin);
                     printf("1.se encontro lugar en %d\n",posLibre);
                     //utn_getString(buffer,"Ingrese:","No!",0,20,1);
                 //    fgets(buffer[20],20,stdin);
-                    printf("se ingreso:%s\n",buffer);
+                    printf("se ingreso:%s\n",auxEmpleado[posLibre].nombre);
                     printf("2. se encontro lugar en %d\n",posLibre);
                     //nombres[posLibre] = buffer;
 
                 }
-                    for(i=0;i<LEN_LISTA;i++)
-                    {
-                    strncpy(auxEmpleado[i].nombre,buffer,20);
-                        break;
-                    }
+
 
                 break;
             }

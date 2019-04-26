@@ -4,6 +4,8 @@
 	<stdlib.h>
 	"utn.h"
 
+1556114033 
+
 1555022033 source:/home/profesor/Ernesto/LABO12019/Clase7/Clase7/utn.c
 	<stdio.h>
 	<stdlib.h>
@@ -50,4 +52,12 @@
 	<stdlib.h>
 	<string.h>
 	"utn.h"
+
+1556228334 source:/home/alumno/ProgLaboMauricio1/clase 9 ABM/clase 10/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1556228334 /home/alumno/ProgLaboMauricio1/clase 9 ABM/clase 10/utn.h
 
