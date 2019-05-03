@@ -133,3 +133,50 @@
 
 1556752619 c:\users\elias\onedrive\escritorio\proglabomauricio1\clase9-abm-parcial\publicidad.h
 
+1556832517 source:/home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/main.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"validaciones.h"
+	"menu.h"
+
+1556832517 /home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/utn.h
+
+1556832517 /home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/validaciones.h
+
+1556832517 /home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/menu.h
+
+1556832517 source:/home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/menu.c
+	<stdio.h>
+	<stdlib.h>
+	"utn.h"
+	"validaciones.h"
+	"menu.h"
+	"publicidad.h"
+
+1556832517 /home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/publicidad.h
+
+1556832517 source:/home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/publicidad.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"validaciones.h"
+	"utn.h"
+	"publicidad.h"
+
+1556832517 source:/home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/utn.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"validaciones.h"
+	"utn.h"
+
+1556832517 source:/home/alumno/ProgLaboMauricio1/CLASE9-ABM-PARCIAL/validacioines.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+	"utn.h"
+
