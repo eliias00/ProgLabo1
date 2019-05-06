@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1557104516 source:/home/elias/Escritorio/parcial_ambulancia/ambu.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"ambu.h"
+	"valid.h"
+
+1557105747 /home/elias/Escritorio/parcial_ambulancia/ambu.h
+
+1557102622 /home/elias/Escritorio/parcial_ambulancia/valid.h
+
+1557102917 source:/home/elias/Escritorio/parcial_ambulancia/main.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"ambu.h"
+	"valid.h"
+
+1557102622 source:/home/elias/Escritorio/parcial_ambulancia/valid.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"ambu.h"
+	"valid.h"
+
