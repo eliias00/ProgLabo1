@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -58,8 +58,11 @@ int altaSocios(Socios *array,int cant,int posLibre)
         {
             if(!getSexo(array[posLibre].sexo,"ingrese un sexo(F/M): ","error,vuelva a ingresar\n\n",0,2,1))
             {
-                if(!getInt("ingrese el telefono: ","\nerror,vuelva a intentar",6,16,1,array[posLibre].telefono))
+                if(!getInt("ingrese el telefono: ","\nerror,vuelva a intentar",6,16,1,telefono))
                 {
+                   // auxTel=atoi(telefono);
+                   // array[posLibre].telefono=auxTel;
+                    printf("%s",array[posLibre].sexo);
                     if(!getEmail(array[posLibre].email,"ingrese un email: ","error, vuelva a ingresar\n\n",6,31,1))
                     {
                         if (!getDia(&auxFecha.dia,"ingrese un dia: ","error, vuelva a ingresar\n\n",0,3,1))
@@ -211,8 +214,7 @@ int OrdenamientoSocios(Socios *array,int cant)
     int j;
     int d;
     Socios aux;
-    FechaSoc auxFec;
-    printf("%d",auxFec.dia);
+
     printf("  ordenado alfabeticamente ascendente por apellido:\n");
     for(i = 1; i < cant; i++)
     {
@@ -229,7 +231,7 @@ int OrdenamientoSocios(Socios *array,int cant)
     {
         if(array[d].isEmpty!=VACIO)
         {
-            printf("apellido:%s| nombre:%s| id:%d| sexo:%s| telefono:%s| email:%s| fecha(dia:%d,mes:%d,anio:%d)\n",array[d].apellido,array[d].nombre,array[d].id,array[d].sexo,array[d].telefono,array[d].email,&auxFec.dia,&auxFec.mes,&auxFec.anio);
+            printf("apellido:%s| nombre:%s| id:%d| sexo:%s| telefono:%s| email:%s| fecha(dia:%d,mes:%d,anio:%d)\n",array[d].apellido,array[d].nombre,array[d].id,array[d].sexo,array[d].telefono,array[d].email,array[d].fechaSocio.dia,array[d].fechaSocio.mes,array[d].fechaSocio.anio);
         }
     }
 

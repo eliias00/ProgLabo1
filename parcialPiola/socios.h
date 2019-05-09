@@ -15,7 +15,7 @@ typedef struct
     char nombre[31];
     char apellido[31];
     char sexo[1];
-    char telefono[16];
+    int telefono;
     char email[31];
     FechaSoc fechaSocio;
 

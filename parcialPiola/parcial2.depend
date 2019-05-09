@@ -9,6 +9,8 @@
 	"validaciones.h"
 	"libros.h"
 
+1557276669 
+
 1557275261 source:/home/alumno/ProgLaboMauricio1/parcial2/menu.c
 	<stdio.h>
 	<stdio_ext.h>
@@ -67,6 +69,8 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+
+1557422655 .h"
 
 1557403764 c:\users\e723c0d\desktop\proglabomauricio1-master\parcial2\menu.h
 
@@ -134,4 +138,112 @@
 	"prestamos.h"
 
 1557421684 c:\users\e723c0d\desktop\proglabomauricio1-master\parcial2\prestamos.h
+
+1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/autores.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/menu.h
+
+1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/autores.h
+
+1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/validaciones.h
+
+1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/libros.h
+
+1557440704 /home/alumno/ProgLaboMauricio1/parcialPiola/socios.h
+
+1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/prestamos.h
+
+1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/libros.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557438459 source:/home/alumno/ProgLaboMauricio1/parcialPiola/main.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557439481 source:/home/alumno/ProgLaboMauricio1/parcialPiola/menu.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/prestamos.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/validaciones.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557440774 source:/home/alumno/ProgLaboMauricio1/parcialPiola/socios.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
+
+1557439328 source:/home/alumno/ProgLaboMauricio1/parcialPiola/informes.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"autores.h"
+	"validaciones.h"
+	"libros.h"
+	"socios.h"
+	"prestamos.h"
 

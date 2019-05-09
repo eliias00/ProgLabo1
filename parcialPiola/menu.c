@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -45,13 +45,17 @@ int funcionMenu(void)
     ArrayLibros[1].isEmpty=0;
     ArrayLibros[1].idAutor=0;
     //**********************************************
-  /*  strcpy(arrayAsociado[1].apellido,"perez");
-    arrayAsociado[1].isEmpty=0;
-    strcpy(arrayAsociado[1].nombre,"laura");
-    arrayAsociado[1].dni=42456789 ;
-    arrayAsociado[1].edad=21;
-    arrayAsociado[1].id=1;*/
-    //***********************************************
+    strcpy(arraySocios[0].nombre,"leo");
+    strcpy(arraySocios[0].apellido,"sisfdgnifsjnb");
+    strcpy(arraySocios[0].email,"eliastroncoso@gmail.com");
+    arraySocios[0].fechaSocio.dia=10;
+    arraySocios[0].fechaSocio.mes=11;
+    arraySocios[0].fechaSocio.anio=2020;
+    arraySocios[0].id=0;
+    arraySocios[0].isEmpty=0;
+    strcpy(arraySocios[0].sexo,"f");
+    strcpy(arraySocios[0].telefono,"42345566");
+    //**********************************************
     do
     {
         printf(":::::::::::::::::::::::::::::::::\n");
