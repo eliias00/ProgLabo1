@@ -139,7 +139,7 @@
 
 1557421684 c:\users\e723c0d\desktop\proglabomauricio1-master\parcial2\prestamos.h
 
-1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/autores.c
+1557446005 source:/home/alumno/ProgLaboMauricio1/parcialPiola/autores.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -150,20 +150,21 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
 
-1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/menu.h
+1557441495 /home/alumno/ProgLaboMauricio1/parcialPiola/menu.h
 
-1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/autores.h
+1557441495 /home/alumno/ProgLaboMauricio1/parcialPiola/autores.h
 
-1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/validaciones.h
+1557441495 /home/alumno/ProgLaboMauricio1/parcialPiola/validaciones.h
 
-1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/libros.h
+1557441495 /home/alumno/ProgLaboMauricio1/parcialPiola/libros.h
 
-1557440704 /home/alumno/ProgLaboMauricio1/parcialPiola/socios.h
+1557442366 /home/alumno/ProgLaboMauricio1/parcialPiola/socios.h
 
-1557437551 /home/alumno/ProgLaboMauricio1/parcialPiola/prestamos.h
+1557441495 /home/alumno/ProgLaboMauricio1/parcialPiola/prestamos.h
 
-1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/libros.c
+1557446005 source:/home/alumno/ProgLaboMauricio1/parcialPiola/libros.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -174,8 +175,9 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
 
-1557438459 source:/home/alumno/ProgLaboMauricio1/parcialPiola/main.c
+1557443633 source:/home/alumno/ProgLaboMauricio1/parcialPiola/main.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -186,8 +188,9 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
 
-1557439481 source:/home/alumno/ProgLaboMauricio1/parcialPiola/menu.c
+1557450018 source:/home/alumno/ProgLaboMauricio1/parcialPiola/menu.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -198,8 +201,9 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
 
-1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/prestamos.c
+1557446005 source:/home/alumno/ProgLaboMauricio1/parcialPiola/prestamos.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -210,8 +214,9 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
 
-1557438458 source:/home/alumno/ProgLaboMauricio1/parcialPiola/validaciones.c
+1557443643 source:/home/alumno/ProgLaboMauricio1/parcialPiola/validaciones.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -222,8 +227,9 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
 
-1557440774 source:/home/alumno/ProgLaboMauricio1/parcialPiola/socios.c
+1557446003 source:/home/alumno/ProgLaboMauricio1/parcialPiola/socios.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -234,8 +240,9 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
 
-1557439328 source:/home/alumno/ProgLaboMauricio1/parcialPiola/informes.c
+1557449513 source:/home/alumno/ProgLaboMauricio1/parcialPiola/informes.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
@@ -246,4 +253,7 @@
 	"libros.h"
 	"socios.h"
 	"prestamos.h"
+	"informes.h"
+
+1557443636 /home/alumno/ProgLaboMauricio1/parcialPiola/informes.h
 

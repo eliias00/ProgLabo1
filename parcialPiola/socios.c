@@ -8,7 +8,7 @@
 #include "libros.h"
 #include "socios.h"
 #include "prestamos.h"
-#define CAPACIDAD 3
+#include "informes.h"
 #define VACIO -1
 #define LLENO 1
 
@@ -60,9 +60,8 @@ int altaSocios(Socios *array,int cant,int posLibre)
             {
                 if(!getInt("ingrese el telefono: ","\nerror,vuelva a intentar",6,16,1,telefono))
                 {
-                   // auxTel=atoi(telefono);
-                   // array[posLibre].telefono=auxTel;
-                    printf("%s",array[posLibre].sexo);
+                    auxTel=atoi(telefono);
+                    array[posLibre].telefono=auxTel;
                     if(!getEmail(array[posLibre].email,"ingrese un email: ","error, vuelva a ingresar\n\n",6,31,1))
                     {
                         if (!getDia(&auxFecha.dia,"ingrese un dia: ","error, vuelva a ingresar\n\n",0,3,1))
@@ -135,7 +134,7 @@ int modificacionSocios(Socios *array,int cant)
     {
         do
         {
-      //      system("clear");
+            //      system("clear");
             printf("----------------\n");
             printf("- 1) APELLIDO  -\n");
             printf("- 2) NOMBRE    -\n");
@@ -145,7 +144,7 @@ int modificacionSocios(Socios *array,int cant)
             printf("----------------\n");
             printf("ingrese el campo a modificar: ");
             scanf("%d",&aceptar);
-      //a      system("clear");
+            //a      system("clear");
             switch(aceptar)
             {
             case 1:
@@ -231,10 +230,10 @@ int OrdenamientoSocios(Socios *array,int cant)
     {
         if(array[d].isEmpty!=VACIO)
         {
-            printf("apellido:%s| nombre:%s| id:%d| sexo:%s| telefono:%s| email:%s| fecha(dia:%d,mes:%d,anio:%d)\n",array[d].apellido,array[d].nombre,array[d].id,array[d].sexo,array[d].telefono,array[d].email,array[d].fechaSocio.dia,array[d].fechaSocio.mes,array[d].fechaSocio.anio);
+            printf("apellido:%s| nombre:%s| id:%d| sexo:%s| telefono:%d| email:%s| fecha(dia:%d,mes:%d,anio:%d)\n",array[d].apellido,array[d].nombre,array[d].id,array[d].sexo,array[d].telefono,array[d].email,array[d].fechaSocio.dia,array[d].fechaSocio.mes,array[d].fechaSocio.anio);
         }
     }
 
-return 0;
+    return 0;
 }
 

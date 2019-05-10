@@ -8,6 +8,7 @@
 #include "libros.h"
 #include "socios.h"
 #include "prestamos.h"
+#include "informes.h"
 int getString(char *msg,char *msgError,int minimo,int maximo,int reintentos,char *resultado)
 {
     int retorno =-1;

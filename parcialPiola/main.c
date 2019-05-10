@@ -8,6 +8,7 @@
 #include "libros.h"
 #include "socios.h"
 #include "prestamos.h"
+#include "informes.h"
 int main()
 {
     funcionMenu();
