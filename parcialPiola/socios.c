@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -76,7 +76,7 @@ int altaSocios(Socios *array,int cant,int posLibre)
                                     array[posLibre].fechaSocio.anio=auxFecha.anio;
 
                                     array[posLibre].id=generarIdSocios();
-                                    array[posLibre].isEmpty=0;
+                                    array[posLibre].isEmpty=LLENO;
                                     ret=0;
                                 }
                             }

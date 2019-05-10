@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -18,10 +18,10 @@ int getString(char *msg,char *msgError,int minimo,int maximo,int reintentos,char
         do
         {
             printf("\n%s",msg);
-            __fpurge(stdin);
-            fgets(bufferStr,sizeof(bufferStr),stdin);
-            bufferStr[strlen(bufferStr)-1] = '\0';
-          //  scanf("%s",&bufferStr);
+         //  __fpurge(stdin);
+         //   fgets(bufferStr,sizeof(bufferStr),stdin);
+         //   bufferStr[strlen(bufferStr)-1] = '\0';
+            scanf("%s",&bufferStr);
             if(strlen(bufferStr)>=minimo && strlen(bufferStr)<maximo)
             {
                 strncpy(resultado,bufferStr,maximo);

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -63,7 +63,7 @@ int altaLibros(Libros *arrayLibros,Autores *arrayAuto,int cant,int posLibre)
                 auxAut=atoi(idAut);
                 arrayLibros[posLibre].idAutor=auxAut;
                 arrayLibros[posLibre].id=generarIdLibro();
-                arrayLibros[posLibre].isEmpty=0;
+                arrayLibros[posLibre].isEmpty=LLENO;
                 ret=0;
             }
 

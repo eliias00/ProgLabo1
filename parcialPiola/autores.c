@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -59,7 +59,7 @@ int altaAutor(Autores *arrayAuto,int cant,int posLibre)
         {
 
             arrayAuto[posLibre].id=generarIdAuto();
-            arrayAuto[posLibre].isEmpty=0;
+            arrayAuto[posLibre].isEmpty=LLENO;
             ret=0;
 
         }

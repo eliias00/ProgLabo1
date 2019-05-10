@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -10,7 +10,8 @@
 #include "prestamos.h"
 #include "informes.h"
 #define CAPACIDAD 5
-
+#define LLENO 1
+#define VACIO -1
 int funcionMenu(void)
 {
     int opcion;
@@ -37,14 +38,20 @@ int funcionMenu(void)
     arrayAut[0].id=0;
     arrayAut[0].isEmpty=0;
     //**********************************************
-    strcpy(ArrayLibros[0].titulo,"b");
+    strcpy(ArrayLibros[0].titulo,"boca camp");
     ArrayLibros[0].id=0;
-    ArrayLibros[0].isEmpty=0;
+    ArrayLibros[0].isEmpty=LLENO;
     ArrayLibros[0].idAutor=0;
-    strcpy(ArrayLibros[1].titulo,"a");
-    ArrayLibros[1].id=1;
-    ArrayLibros[1].isEmpty=0;
-    ArrayLibros[1].idAutor=0;
+   //**********************************************
+    strcpy(ArrayLibros[1].titulo,"riber");
+     ArrayLibros[1].id=1;
+     ArrayLibros[1].isEmpty=LLENO;
+     ArrayLibros[1].idAutor=0;
+
+     strcpy(ArrayLibros[2].titulo,"racing");
+     ArrayLibros[2].id=2;
+     ArrayLibros[2].isEmpty=LLENO;
+     ArrayLibros[2].idAutor=0;
     //**********************************************
     strcpy(arraySocios[0].nombre,"leo");
     strcpy(arraySocios[0].apellido,"sisfdgnifsjnb");
@@ -53,7 +60,7 @@ int funcionMenu(void)
     arraySocios[0].fechaSocio.mes=11;
     arraySocios[0].fechaSocio.anio=2020;
     arraySocios[0].id=0;
-    arraySocios[0].isEmpty=0;
+    arraySocios[0].isEmpty=LLENO;
     strcpy(arraySocios[0].sexo,"f");
     arraySocios[0].telefono=23455662;
 
@@ -64,7 +71,7 @@ int funcionMenu(void)
     arraySocios[1].fechaSocio.mes=9;
     arraySocios[1].fechaSocio.anio=2027;
     arraySocios[1].id=1;
-    arraySocios[1].isEmpty=0;
+    arraySocios[1].isEmpty=LLENO;
     strcpy(arraySocios[1].sexo,"m");
     arraySocios[1].telefono=63486662;
     //**********************************************
@@ -75,19 +82,34 @@ int funcionMenu(void)
     arraySocios[2].fechaSocio.mes=10;
     arraySocios[2].fechaSocio.anio=2068;
     arraySocios[2].id=2;
-    arraySocios[2].isEmpty=0;
+    arraySocios[2].isEmpty=LLENO;
     strcpy(arraySocios[1].sexo,"m");
     arraySocios[2].telefono=63499962;
     //********************************************
-    arrayPrestamos[0].idLibro=0;
+    arrayPrestamos[0].idLibro=1;
     arrayPrestamos[0].idSocio=0;
-    arrayPrestamos[0].isEmpty=0;
-    arrayPrestamos[1].idLibro=0;
+    arrayPrestamos[0].isEmpty=LLENO;
+    arrayPrestamos[0].fecPre.dia=10;
+    arrayPrestamos[0].fecPre.mes=11;
+    arrayPrestamos[0].fecPre.anio=2020;
+
+    arrayPrestamos[1].idLibro=2;
     arrayPrestamos[1].idSocio=1;
-    arrayPrestamos[1].isEmpty=0;
-    arrayPrestamos[2].idLibro=0;
+    arrayPrestamos[1].isEmpty=LLENO;
+    arrayPrestamos[1].fecPre.dia=10;
+    arrayPrestamos[1].fecPre.mes=11;
+    arrayPrestamos[1].fecPre.anio=2020;
+
+    arrayPrestamos[2].idLibro=1;
     arrayPrestamos[2].idSocio=2;
-    arrayPrestamos[2].isEmpty=0;
+    arrayPrestamos[2].isEmpty=LLENO;
+    arrayPrestamos[2].fecPre.dia=11;
+    arrayPrestamos[2].fecPre.mes=11;
+    arrayPrestamos[2].fecPre.anio=2020;
+
+   /* arrayPrestamos[3].idLibro=2;
+    arrayPrestamos[3].idSocio=0;
+    arrayPrestamos[3].isEmpty=LLENO;*/
     do
     {
         printf(":::::::::::::::::::::::::::::::::\n");
@@ -257,7 +279,14 @@ int funcionMenu(void)
             }
             break;
         case 14:
-                informeC(arrayPrestamos,arraySocios ,CAPACIDAD);
+               // informeC(arrayPrestamos,arraySocios ,CAPACIDAD);
+               // informeD(arrayPrestamos,arraySocios,ArrayLibros,CAPACIDAD);
+               //   informeE(ArrayLibros,arrayPrestamos,CAPACIDAD);
+               //   informeF(arraySocios,arrayPrestamos,CAPACIDAD);
+               // informeG(ArrayLibros,CAPACIDAD,arrayPrestamos);
+                //  informeH(arraySocios,CAPACIDAD,arrayPrestamos);
+                    informeI(ArrayLibros,CAPACIDAD);
+                    informeJ(arraySocios,CAPACIDAD);
                 break;
             }
             printf("\nQuiere volver al menu?\ns/Para continuar n/Para salir\n");
