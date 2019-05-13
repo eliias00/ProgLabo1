@@ -21,6 +21,14 @@ typedef struct
 
 }Socios;
 
+int inicializarArraySocios(Socios *array, int cant);
+int buscarElVacioSocios(Socios *array,int cant,int *indice);
+int altaSocios(Socios *array,int cant,int posLibre);
+int buscaIdSocios (Socios *array, int cant, int *idEncontrado);
+int modificacionSocios(Socios *array,int cant);
+int bajaSocios(Socios *array,int cant);
+int OrdenamientoSocios(Socios *array,int cant);
+
 #endif // SOCIOS_H
 
 

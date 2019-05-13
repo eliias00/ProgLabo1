@@ -39,4 +39,21 @@ int isValidint(char* cadena);
  * \return retorna 0 dio bien o -1 si dio mal
  */
 int getInt(char *mensaje, char *mensajeError, int minimo, int maximo, int reintentos, char *resultado);
+
+int isValidSexo(char *cadena);
+
+int getSexo(char *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+
+int isValidMail(char str[]);
+
+int getEmail(char *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+
+int isValidDia(char cadena[]);
+
+int getDia(int *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+
+int getMes(int *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+
+int getAnio(int *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+
 #endif

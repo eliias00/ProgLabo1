@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -47,12 +47,6 @@ int buscarElVacioAuto(Autores *arrayAuto,int cant,int *indice)
 int altaAutor(Autores *arrayAuto,int cant,int posLibre)
 {
     int ret;
-    char dni[50];
-    int auxDni;
-    char edad[50];
-    int auxEdad;
-
-
     if (!getName(arrayAuto[posLibre].nombre,"ingrese un nombre: ","error, vuelva a ingresar\n\n",2,31,1))
     {
         if (!getName(arrayAuto[posLibre].apellido,"ingrese un apellido: ","error, vuelva a ingresar\n\n",2,31,1))
@@ -115,7 +109,7 @@ int modificacion(Autores *arrayAuto,int cant)
             printf("--------------\n");
             printf("ingrese el campo a modificar: ");
             scanf("%d",&aceptar);
-                 system("clear");
+            system("clear");
             switch(aceptar)
             {
             case 5:
@@ -127,7 +121,7 @@ int modificacion(Autores *arrayAuto,int cant)
             }
             printf("\nquiere modificar otro campo?\ns/para continuar n/para salir\n");
             scanf("%s",&modificacion);
-             system("clear");
+            system("clear");
         }
         while(modificacion=='s');
         ret=0;
@@ -167,7 +161,7 @@ int baja(Autores *arrayAuto,int cant)
     }
     return 0;
 }
-int OrdenamientoAutor(Autores *array,int cant)
+void OrdenamientoAutor(Autores *array,int cant)
 {
     int i;
     int j;

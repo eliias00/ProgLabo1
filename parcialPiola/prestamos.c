@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -68,7 +68,7 @@ int altaPrestamos(Prestamos *array,Socios *array1,Libros *array2,int cant,int po
                 if(!getInt("ingrese el id del socio: ","\nerror,vuelva a intentar",0,20,1,idSoc))
                 {
                     auxSoc=atoi(idSoc);
-                    array[posLibre].idSocio=auxAut;
+                    array[posLibre].idSocio=auxSoc;
                     if (!getDia(&auxFec.dia,"ingrese un dia: ","error, vuelva a ingresar\n\n",0,3,1))
                     {
                         if (!getMes(&auxFec.mes,"ingrese un mes: ","error, vuelva a ingresar\n\n",0,3,1))

@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -8,10 +8,9 @@
 #include "libros.h"
 #include "socios.h"
 #include "prestamos.h"
-#include "informes.h"º
+#include "informes.h"
 #define VACIO -1
 #define LLENO 1
-
 
 int informeC(Prestamos *arrayP,Socios *arrayS,int cant)
 {
@@ -70,7 +69,7 @@ int informeD(Prestamos *arrayP,Socios *arrayS,Libros *arrayL,int cant)
     }
         return 0;
 }
-int informeE(Libros *arrayL,Prestamos *arrayP,int cant)
+/*void informeE(Libros *arrayL,Prestamos *arrayP,int cant)
 {
     int i;
     int j;
@@ -131,6 +130,7 @@ int informeE(Libros *arrayL,Prestamos *arrayP,int cant)
              printf("titulo:%s id de libro:%d id de autor:%d\n",arrayL[i].titulo,arrayL[i].id,arrayL[i].idAutor);
            }
     }
+
 }
 int informeF(Socios *arrayS,Prestamos *arrayP,int cant)
 {
@@ -194,7 +194,8 @@ int informeF(Socios *arrayS,Prestamos *arrayP,int cant)
             printf("apellido:%s| nombre:%s| id:%d| sexo:%s| telefono:%d| email:%s| fecha(dia:%d,mes:%d,anio:%d)\n",arrayS[i].apellido,arrayS[i].nombre,arrayS[i].id,arrayS[i].sexo,arrayS[i].telefono,arrayS[i].email,arrayS[i].fechaSocio.dia,arrayS[i].fechaSocio.mes,arrayS[i].fechaSocio.anio);
         }
     }
-}
+    return 0;
+}*/
 
 int informeG(Libros *arrayL,int cant,Prestamos *arrayP)
 {
@@ -259,13 +260,13 @@ void informeI(Libros *array,int cantidad)
     do
     {
         flagSwap=0;
-        for(k=0; k<limite-1; k++)
+        for(k=0; k<cantidad-1; k++)
         {
-            if(strncmp(Libros[k].titulo,Libros[k+1].titulo,50)<0)
+            if(strncmp(array[k].titulo,array[k+1].titulo,50)<0)
             {
-                     auxiliarSwap=Libros[k];
-                Libros[k]=Libros[k+1];
-              Libros[k+1]=auxiliarSwap;
+                     auxiliarSwap=array[k];
+                array[k]=array[k+1];
+              array[k+1]=auxiliarSwap;
                 flagSwap=1;
 
             }

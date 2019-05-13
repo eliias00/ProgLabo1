@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -20,9 +20,9 @@ int funcionMenu(void)
     int posLibre2;
     int posLibre3;
     int posLibre4;
-    int posLibreLlam;
-    int flag=0;
-
+    int flag1=0;
+    int flag2=0;
+    int flag3=0;
     Autores arrayAut[CAPACIDAD];
     Libros ArrayLibros[CAPACIDAD];
     Socios arraySocios[CAPACIDAD];
@@ -42,16 +42,16 @@ int funcionMenu(void)
     ArrayLibros[0].id=0;
     ArrayLibros[0].isEmpty=LLENO;
     ArrayLibros[0].idAutor=0;
-   //**********************************************
+    //**********************************************
     strcpy(ArrayLibros[1].titulo,"riber");
-     ArrayLibros[1].id=1;
-     ArrayLibros[1].isEmpty=LLENO;
-     ArrayLibros[1].idAutor=0;
+    ArrayLibros[1].id=1;
+    ArrayLibros[1].isEmpty=LLENO;
+    ArrayLibros[1].idAutor=0;
 
-     strcpy(ArrayLibros[2].titulo,"racing");
-     ArrayLibros[2].id=2;
-     ArrayLibros[2].isEmpty=LLENO;
-     ArrayLibros[2].idAutor=0;
+    strcpy(ArrayLibros[2].titulo,"racing");
+    ArrayLibros[2].id=2;
+    ArrayLibros[2].isEmpty=LLENO;
+    ArrayLibros[2].idAutor=0;
     //**********************************************
     strcpy(arraySocios[0].nombre,"leo");
     strcpy(arraySocios[0].apellido,"sisfdgnifsjnb");
@@ -107,9 +107,9 @@ int funcionMenu(void)
     arrayPrestamos[2].fecPre.mes=11;
     arrayPrestamos[2].fecPre.anio=2020;
 
-   /* arrayPrestamos[3].idLibro=2;
-    arrayPrestamos[3].idSocio=0;
-    arrayPrestamos[3].isEmpty=LLENO;*/
+    /* arrayPrestamos[3].idLibro=2;
+     arrayPrestamos[3].idSocio=0;
+     arrayPrestamos[3].isEmpty=LLENO;*/
     do
     {
         printf(":::::::::::::::::::::::::::::::::\n");
@@ -129,13 +129,13 @@ int funcionMenu(void)
         printf(":::::::::::::::::::::::::::::::::\n");
         printf("elija una opcion: ");
         scanf("%d", &opcion);
-        //    system("clear");
+        system("clear");
         switch(opcion)
         {
         case 1:
             if(!buscarElVacioAuto(arrayAut,CAPACIDAD,&posLibre1))
             {
-                //   flag=1;
+                flag1=1;
                 switch(altaAutor(arrayAut,CAPACIDAD,posLibre1))
                 {
                 case 0:
@@ -153,32 +153,39 @@ int funcionMenu(void)
             }
             break;
         case 2:
-            /*  if(flag==0)
-              {
-                  printf("debe cargar al autor primero");
-              }
-              else
-              {*/
-            modificacion(arrayAut,CAPACIDAD);
-            //      }
+            if(flag1==0)
+            {
+                printf("debe cargar al autor primero");
+            }
+            else
+            {
+                modificacion(arrayAut,CAPACIDAD);
+            }
             break;
         case 3:
-            /*   if(flag==0)
-               {
-                   printf("debe cargar al autor primero");
-               }
-               else
-               {*/
-            baja(arrayAut,CAPACIDAD);
-            //   }
+            if(flag1==0)
+            {
+                printf("debe cargar al autor primero");
+            }
+            else
+            {
+                baja(arrayAut,CAPACIDAD);
+            }
             break;
         case 4:
-            OrdenamientoAutor(arrayAut,CAPACIDAD);
+            if(flag1==0)
+            {
+                printf("debe cargar al autor primero");
+            }
+            else
+            {
+                OrdenamientoAutor(arrayAut,CAPACIDAD);
+            }
             break;
         case 5:
             if(!buscarElVacioLibros(ArrayLibros,CAPACIDAD,&posLibre2))
             {
-//flag=1;
+                flag2=1;
                 switch(altaLibros(ArrayLibros,arrayAut,CAPACIDAD,posLibre2))
                 {
                 case 0:
@@ -190,39 +197,46 @@ int funcionMenu(void)
                     break;
                 }
             }
-            // else
-            //{
-            //   printf("lleno");
-            // }
+            else
+            {
+                printf("lleno");
+            }
             break;
         case 6:
-            /* if(flag==0)
-             {
-                 printf("debe cargar al libro primero");
-             }
-             else
-             {*/
-            modificacionLibros(ArrayLibros,arrayAut,CAPACIDAD);
-            //  }
+            if(flag2==0)
+            {
+                printf("debe cargar al libro primero");
+            }
+            else
+            {
+                modificacionLibros(ArrayLibros,arrayAut,CAPACIDAD);
+            }
             break;
         case 7:
-            /*   if(flag==0)
-               {
-                   printf("debe cargar al libro primero");
-               }
-               else
-               {*/
-            bajaLibros(arrayAut,ArrayLibros,CAPACIDAD);
-            //  }
+            if(flag2==0)
+            {
+                printf("debe cargar al libro primero");
+            }
+            else
+            {
+                bajaLibros(arrayAut,ArrayLibros,CAPACIDAD);
+            }
             break;
         case 8:
-            OrdenamientoLibros(ArrayLibros,arrayAut,CAPACIDAD);
+            if(flag2==0)
+            {
+                printf("debe cargar al libro primero");
+            }
+            else
+            {
+                OrdenamientoLibros(ArrayLibros,arrayAut,CAPACIDAD);
+            }
             break;
 
         case 9:
             if(!buscarElVacioSocios(arraySocios,CAPACIDAD,&posLibre3))
             {
-//flag=1;
+                flag3=1;
                 switch(altaSocios(arraySocios,CAPACIDAD,posLibre3))
                 {
                 case 0:
@@ -234,35 +248,48 @@ int funcionMenu(void)
                     break;
                 }
             }
-            // else
-            //{
-            //   printf("lleno");
-            // }
+            else
+            {
+                printf("lleno");
+            }
             break;
         case 10:
-            /* if(flag==0)
-             {
-                 printf("debe cargar al libro primero");
-             }
-             else
-             {*/
-            modificacionSocios(arraySocios,CAPACIDAD);
-            //  }
+            if(flag3==0)
+            {
+                printf("debe cargar el socio primero");
+            }
+            else
+            {
+                modificacionSocios(arraySocios,CAPACIDAD);
+            }
             break;
         case 11:
-            /*   if(flag==0)
-               {
-                   printf("debe cargar al libro primero");
-               }
-               else
-               {*/
-            bajaSocios(arraySocios,CAPACIDAD);
-            //  }
+            if(flag3==0)
+            {
+                printf("debe cargar el socio primero");
+            }
+            else
+            {
+                bajaSocios(arraySocios,CAPACIDAD);
+            }
             break;
         case 12:
-            OrdenamientoSocios(arraySocios,CAPACIDAD);
+            if(flag3==0)
+            {
+                printf("debe cargar el socio primero");
+            }
+            else
+            {
+                OrdenamientoSocios(arraySocios,CAPACIDAD);
+            }
             break;
         case 13:
+            if(flag3==0)
+            {
+                printf("debe cargar las altas primero");
+            }
+            else
+            {
             if(!buscarElVacioPrestamos(arrayPrestamos,CAPACIDAD,&posLibre4))
             {
                 //flag=1;
@@ -277,22 +304,23 @@ int funcionMenu(void)
                     break;
                 }
             }
+            }
             break;
         case 14:
-               // informeC(arrayPrestamos,arraySocios ,CAPACIDAD);
-               // informeD(arrayPrestamos,arraySocios,ArrayLibros,CAPACIDAD);
-               //   informeE(ArrayLibros,arrayPrestamos,CAPACIDAD);
-               //   informeF(arraySocios,arrayPrestamos,CAPACIDAD);
-               // informeG(ArrayLibros,CAPACIDAD,arrayPrestamos);
-                //  informeH(arraySocios,CAPACIDAD,arrayPrestamos);
-                    informeI(ArrayLibros,CAPACIDAD);
-                    informeJ(arraySocios,CAPACIDAD);
-                break;
-            }
-            printf("\nQuiere volver al menu?\ns/Para continuar n/Para salir\n");
-            scanf("%s",&seguir);
-            system("clear");
+            // informeC(arrayPrestamos,arraySocios ,CAPACIDAD);
+            // informeD(arrayPrestamos,arraySocios,ArrayLibros,CAPACIDAD);
+            //   informeE(ArrayLibros,arrayPrestamos,CAPACIDAD);
+            //   informeF(arraySocios,arrayPrestamos,CAPACIDAD);
+            // informeG(ArrayLibros,CAPACIDAD,arrayPrestamos);
+            //  informeH(arraySocios,CAPACIDAD,arrayPrestamos);
+            informeI(ArrayLibros,CAPACIDAD);
+            informeJ(arraySocios,CAPACIDAD);
+            break;
         }
-        while(seguir =='s');
-        return 0;
+        printf("\nQuiere volver al menu?\ns/Para continuar n/Para salir\n");
+        scanf("%s",&seguir);
+        system("clear");
     }
+    while(seguir =='s');
+    return 0;
+}

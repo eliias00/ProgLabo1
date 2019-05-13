@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -49,7 +49,6 @@ int altaSocios(Socios *array,int cant,int posLibre)
     int ret;
     char telefono[16];
     int auxTel;
-    int posicion;
     FechaSoc auxFecha;
 
     if (!getName(array[posLibre].nombre,"ingrese un nombre: ","error, vuelva a ingresar\n\n",2,31,1))
@@ -118,10 +117,8 @@ int modificacionSocios(Socios *array,int cant)
     int posId3;
     int i;
     int posPrueba=0;
-    int posicion;
-
-    char idAut[50];
-    int auxAut;
+    char telefono[50];
+    int auxTel;
 
     for(i=0; i<cant; i++)
     {
@@ -157,7 +154,9 @@ int modificacionSocios(Socios *array,int cant)
                 getSexo(array[posPrueba].sexo,"ingrese un sexo(F/M): ","error,vuelva a ingresar\n\n",0,2,1);
                 break;
             case 4:
-                getInt("ingrese el telefono: ","\nerror,vuelva a intentar",6,16,1,array[posPrueba].telefono);
+                getInt("ingrese el telefono: ","\nerror,vuelva a intentar",6,16,1,telefono);
+                auxTel=atoi(telefono);
+                array[posPrueba].telefono=auxTel;
                 break;
             case 5:
                 getEmail(array[posPrueba].email,"ingrese un email: ","error, vuelva a ingresar\n\n",6,31,1);
@@ -208,7 +207,6 @@ int bajaSocios(Socios *array,int cant)
 }
 int OrdenamientoSocios(Socios *array,int cant)
 {
-    ///NO ME DEJA MOSTRAR LA FECHA
     int i;
     int j;
     int d;

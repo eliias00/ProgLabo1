@@ -16,5 +16,7 @@ typedef struct
     int idSocio;
     FechaPre fecPre;
 }Prestamos;
-
+int inicializarArrayprestamo(Prestamos *array, int cant);
+int buscarElVacioPrestamos(Prestamos *array,int cant,int *indice);
+int altaPrestamos(Prestamos *array,Socios *array1,Libros *array2,int cant,int posLibre);
 #endif

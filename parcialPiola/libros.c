@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -210,4 +210,5 @@ int OrdenamientoLibros(Libros *arrayLibros,Autores *arrayAuto,int cant)
             printf("titulo:%s id de libro:%d id de autor:%d\n",arrayLibros[d].titulo,arrayLibros[d].id,arrayLibros[d].idAutor);
         }
     }
+    return 0;
 }
