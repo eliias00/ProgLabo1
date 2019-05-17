@@ -85,5 +85,7 @@ int getMes(int *resultado,char *msg,char *msgError,int minimo,int maximo,int rei
  * \return retorna 0 dio bien o -1 si dio mal
  */
 int getAnio(int *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+int isValidDireccion(char *cadena);
+int getDireccion(char *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
 
 #endif

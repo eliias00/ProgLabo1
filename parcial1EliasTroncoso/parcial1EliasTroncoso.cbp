@@ -31,9 +31,28 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="instrumento.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="instrumento.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h" />
+		<Unit filename="musico.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="musico.h" />
+		<Unit filename="orquesta.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="orquesta.h" />
+		<Unit filename="parcial1EliasTroncoso.cbp" />
+		<Unit filename="parcial1EliasTroncoso.depend" />
+		<Unit filename="parcial1EliasTroncoso.layout" />
 		<Unit filename="validaciones.c">
 			<Option compilerVar="CC" />
 		</Unit>
