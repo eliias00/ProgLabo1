@@ -77,3 +77,80 @@
 	"musico.h"
 	"instrumento.h"
 
+1558206408 source:/home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/instrumento.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+
+1558194430 /home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/menu.h
+
+1558207715 /home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/orquesta.h
+
+1558207828 /home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/validaciones.h
+
+1558207717 /home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/musico.h
+	"instrumento.h"
+
+1558207718 /home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/instrumento.h
+
+1558206408 source:/home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/main.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+
+1558194430 source:/home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/validaciones.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"musico.h"
+	"instrumento.h"
+
+1558206408 source:/home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/menu.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+
+1558207717 source:/home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/musico.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+
+1558207716 source:/home/elias/Escritorio/ProgLaboMauricio1/parcial1EliasTroncoso/orquesta.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+

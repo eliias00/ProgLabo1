@@ -12,8 +12,8 @@
 
 static int generarIdInstrumento(void)
 {
-    static int id2=0;
-    return id2++;
+    static int id=0;
+    return id++;
 }
 int inicializarArrayIns(Instrumento *array, int cant)
 {
@@ -45,24 +45,20 @@ int buscarElVacioIns(Instrumento *array,int cant,int *indice)
 int altaIns(Instrumento *array,int cant,int posLibre)
 {
     int ret;
-
-    char tipAut[10];
-
+    char tipAux[50];
     int auxTip;
-
     if (!getName(array[posLibre].nombre,"ingrese un nombre: ","error, vuelva a ingresar\n\n",5,51,1))
     {
-          if(!getInt("ingrese el tipo(1:CUERDAS,2:VIENTO-MADERA,3:VIENTO-METAL,4:PERCUSION.): ","\nerror,vuelva a intentar",1,5,1,tipAut))
-            {
-                auxTip=atoi(tipAut);
-                array[posLibre].tipo=auxTip;
-                array[posLibre].id=generarIdInstrumento();
-                printf("id:%d",array[posLibre].id);
-                array[posLibre].isEmpty=LLENO;
-                ret=0;
-            }
+        if(!getInt("ingrese el tipo:\n1:CUERDAS\n2:VIENTO-MADERA\n3:VIENTO-METAL\n4:PERCUSION: ","\nerror,vuelva a intentar",1,4,1,tipAux))
+        {
+            auxTip=atoi(tipAux);
+            array[posLibre].tipo=auxTip;
+            array[posLibre].id=generarIdInstrumento();
+            printf("id:%d",array[posLibre].id);
+            array[posLibre].isEmpty=LLENO;
+            ret=0;
+        }
     }
-
     else
     {
         ret=1;
@@ -96,19 +92,19 @@ void imprimirInstrumento(Instrumento *array,int cant)
         {
             if(array[i].tipo==1)
             {
-            printf("nombre:%s cuerdas:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
+                printf("nombre:%s cuerdas:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
             }
             if(array[i].tipo==2)
             {
-            printf("nombre:%s viento-madera:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
+                printf("nombre:%s viento-madera:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
             }
             if(array[i].tipo==3)
             {
-            printf("nombre:%s viento-metal:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
+                printf("nombre:%s viento-metal:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
             }
             if(array[i].tipo==4)
             {
-            printf("nombre:%s percusion:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
+                printf("nombre:%s percusion:%d id:%d\n",array[i].nombre,array[i].tipo,array[i].id);
             }
         }
     }

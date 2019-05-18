@@ -12,8 +12,8 @@
 
 static int generarIdOrquesta(void)
 {
-    static int id2=0;
-    return id2++;
+    static int id=0;
+    return id++;
 }
 int inicializarArrayOrquesta(Orquesta *arrayOrquesta, int cant)
 {
@@ -45,20 +45,18 @@ int buscarElVacioOrquesta(Orquesta *arrayOrquesta,int cant,int *indice)
 int altaOrquesta(Orquesta *arrayOrquesta,int cant,int posLibre)
 {
     int ret;
-
-    char tipAut[10];
-
+    char tipAut[50];
     int auxTip;
-
     if (!getName(arrayOrquesta[posLibre].nombre,"ingrese un nombre: ","error, vuelva a ingresar\n\n",5,51,1))
     {
         if (!getDireccion(arrayOrquesta[posLibre].lugar,"ingrese un lugar: ","error, vuelva a ingresar\n\n",5,51,1))
         {
-            if(!getInt("ingrese el tipo(1:sinfonica,2:filarmonica,3:camara.): ","\nerror,vuelva a intentar",1,4,1,tipAut))
+            if(!getInt("ingrese el tipo:\n1:sinfonica\n2:filarmonica\n3:camara: ","\nerror,vuelva a intentar",1,4,1,tipAut))
             {
                 auxTip=atoi(tipAut);
                 arrayOrquesta[posLibre].tipo=auxTip;
                 arrayOrquesta[posLibre].id=generarIdOrquesta();
+                printf("el id: %d",arrayOrquesta[posLibre].id);
                 arrayOrquesta[posLibre].isEmpty=LLENO;
                 ret=0;
             }
@@ -87,37 +85,6 @@ int buscaIdOrquesta (Orquesta *array, int cant, int *idEncontrado)
         }
     }
     return retorno;
-}
-
-int bajaOrquesta(Orquesta *array,int cant)
-{
-    int posId1;
-    char resp;
-    int posBaja=0;
-    int i;
-
-    for(i=0; i<cant; i++)
-    {
-        if(array[i].isEmpty!=VACIO)
-        {
-            printf("id disponibles: %d\n",array[i].id);
-        }
-    }
-    if(!buscaIdOrquesta(array,cant,&posId1))
-    {
-        printf("esta seguro que quiere dar de baja ese id: \n s|n: ");
-        scanf("%s",&resp);
-        if(resp=='s')
-        {
-            printf("se ah dado de baja esta Orquesta");
-            array[posBaja].isEmpty=VACIO;
-        }
-        else
-        {
-            printf("vuelva al menu");
-        }
-    }
-    return 0;
 }
 void imprimirOrquestas(Orquesta *array, int cant)
 {

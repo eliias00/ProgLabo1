@@ -6,14 +6,13 @@
 #include "orquesta.h"
 #include "validaciones.h"
 #include "musico.h"
-#include "instrumento.h"
 #define VACIO -1
 #define LLENO 1
 
 static int generarIdM(void)
 {
-    static int id2=0;
-    return id2++;
+    static int id=0;
+    return id++;
 }
 int inicializarArrayM(Musico *array, int cant)
 {
@@ -45,7 +44,7 @@ int buscarElVacioMusico(Musico *array,int cant,int *indice)
 int altaMusico(Musico *array,Orquesta *array2,Instrumento *array3,int cant,int posLibre)
 {
     int ret;
-    char edad[30];
+    char edad[50];
     int auxEdad;
     int posicion;
     char idAut[50];
@@ -57,11 +56,10 @@ int altaMusico(Musico *array,Orquesta *array2,Instrumento *array3,int cant,int p
     {
         if (!getName(array[posLibre].apellido,"ingrese un apellido: ","error, vuelva a ingresar\n\n",5,51,1))
         {
-            if(!getInt("ingrese edad: ","\nerror,vuelva a intentar",0,30,1,edad))
+            if(!getInt("ingrese edad: ","\nerror,vuelva a intentar",1,3,1,edad))
             {
                 auxEdad=atoi(edad);
                 array[posLibre].edad=auxEdad;
-
                 if(!buscaIdOrquesta(array2,cant,&posicion))
                 {
                     printf("se encontro");
@@ -69,7 +67,6 @@ int altaMusico(Musico *array,Orquesta *array2,Instrumento *array3,int cant,int p
                     {
                         auxAut=atoi(idAut);
                         array[posLibre].idOrq=auxAut;
-
                         if(!buscaIdInst(array3,cant,&posicion))
                         {
                             printf("se encontro");
@@ -80,17 +77,13 @@ int altaMusico(Musico *array,Orquesta *array2,Instrumento *array3,int cant,int p
                                 array[posLibre].id=generarIdM();
                                 array[posLibre].isEmpty=LLENO;
                                 ret=0;
-
                             }
                         }
-
-
                     }
                 }
             }
         }
     }
-
     else
     {
         ret=1;
@@ -124,10 +117,9 @@ int modificacionMusico(Musico *array,Orquesta *array2,int cant)
     int i;
     int posPrueba=0;
     int posicion;
-
     char idAut[50];
     int auxAut;
-    char edad[10];
+    char edad[50];
     int auxEdad;
 
     for(i=0; i<cant; i++)
@@ -152,14 +144,14 @@ int modificacionMusico(Musico *array,Orquesta *array2,int cant)
             switch(aceptar)
             {
             case 1:
-                getInt("ingrese edad: ","\nerror,vuelva a intentar",1,30,1,edad);
+                getInt("ingrese edad: ","\nerror,vuelva a intentar",0,3,1,edad);
                 auxEdad=atoi(edad);
                 array[posPrueba].edad=auxEdad;
                 break;
             case 2:
                 if(!buscaIdOrquesta(array2,cant,&posicion))
                 {
-                    getInt("modifique el id de la orquesta: ","\nerror,vuelva a intentar",0,20,1,idAut);
+                    getInt("modifique el id de la orquesta: ","\nerror,vuelva a intentar",0,2,1,idAut);
                     auxAut=atoi(idAut);
                     array[posPrueba].idOrq=auxAut;
                 }
@@ -178,7 +170,6 @@ int modificacionMusico(Musico *array,Orquesta *array2,int cant)
     }
     return ret;
 }
-
 int bajaMusico(Musico *array,int cant)
 {
     int posId1;
@@ -221,12 +212,50 @@ void imprimirMusico(Musico *array, Instrumento *array2,int cant1,int cant2)
             {
                 if(array2[j].isEmpty==LLENO)
                 {
-                    if(array[i].id==array2[j].id)
+                    if(array[i].idIns==array2[j].id)
                     {
-                    printf("nombre:%s apellido:%s id:%d nombre:%s tipo:%d\n",array[i].nombre,array[i].apellido,array[i].id,array2[j].nombre,array2[j].tipo);
+                        printf("nombre:%s apellido:%s id:%d nombre:%s tipo:%d\n",array[i].nombre,array[i].apellido,array[i].id,array2[i].nombre,array2[i].tipo);
                     }
                 }
             }
         }
     }
+}
+int bajaOrquesta(Orquesta *arrayOrq,Musico *arrayMus,int cantOrq,int cantMus)
+{
+    int posId1;
+    char resp;
+    int posBaja=0;
+    int i;
+    int j;
+
+    for(i=0; i<cantOrq; i++)
+    {
+        if(arrayOrq[i].isEmpty!=VACIO)
+        {
+            printf("id disponibles: %d\n",arrayOrq[i].id);
+        }
+    }
+    if(!buscaIdOrquesta(arrayOrq,cantOrq,&posId1))
+    {
+        printf("esta seguro que quiere dar de baja ese id: \n s|n: ");
+        scanf("%s",&resp);
+        if(resp=='s')
+        {
+            for(j=0; j<cantMus; j++)
+            {
+                if(arrayMus[j].idOrq==arrayOrq[i].id)
+                {
+                    arrayOrq[posBaja].isEmpty=VACIO;
+                    arrayMus[j].isEmpty=VACIO;
+                }
+            }
+            printf("se ah dado de baja esta Orquesta y a los musicos que la componen");
+        }
+        else
+        {
+            printf("vuelva al menu");
+        }
+    }
+    return 0;
 }
