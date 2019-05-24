@@ -24,3 +24,17 @@
 	<string.h>
 	"empleado.h"
 
+1558648934 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+
+1558648490 /home/alumno/Escritorio/ProgLaboMauricio1/memoria/empleado.h
+
+1558648757 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+

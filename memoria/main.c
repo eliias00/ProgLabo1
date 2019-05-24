@@ -5,41 +5,44 @@
 
 int main()
 {
-    Empleado *pArrayEmpleado[1000];
-    int ultimoElementoArrayEmpleado = 0;
+    Persona *pArrayPersona[1000];
+    int ultimoElementoArrayPersona = 0;
     int indiceActual;
     int auxInt;
-    float auxFloat;
-    char auxChar;
-    char aux[15]="hoal";
+    int auxEstado;
 
-    indiceActual = ultimoElementoArrayEmpleado;
-    pArrayEmpleado[indiceActual] =  Emp_new();
+    indiceActual = ultimoElementoArrayPersona;
+    pArrayPersona[indiceActual] =  Emp_new();
 
 
-    if(pArrayEmpleado[indiceActual] != NULL)
+    if(pArrayPersona[indiceActual] != NULL)
     {
-        ultimoElementoArrayEmpleado++;
+        ultimoElementoArrayPersona++;
         printf("OK");
-        if(!Emp_setId(pArrayEmpleado[indiceActual],14))
+        if(!Emp_setId(pArrayPersona[indiceActual],14))
         {
-            Emp_getId(pArrayEmpleado[indiceActual], &auxInt);
+            Emp_getId(pArrayPersona[indiceActual], &auxInt);
             printf("\n El id es %d",auxInt);
 
         }
-        if(!Emp_setPeso(pArrayEmpleado[indiceActual],14))
+         if(!Emp_setNombre(pArrayPersona[indiceActual],"elias"))
         {
-            Emp_getPeso(pArrayEmpleado[indiceActual], &auxFloat);
-            printf("\n El peso es %f",auxFloat);
+            Emp_getNombre(pArrayPersona[indiceActual], aux);
+            printf("\n El nombre es %s",aux);
 
         }
-         if(!Emp_setNombre(pArrayEmpleado[indiceActual],&aux))
+        if(!Emp_setApellido(pArrayPersona[indiceActual],"troncoso"))
         {
-            Emp_getNombre(pArrayEmpleado[indiceActual], auxChar);
-            printf("\n El id es %s",auxChar);
+            Emp_getApellido(pArrayPersona[indiceActual], aux1);
+            printf("\n El nombre es %s",aux1);
 
         }
+        if(!Emp_setEstado(pArrayPersona[indiceActual],1))
+        {
+            Emp_getEstado(pArrayPersona[indiceActual], &auxEstado);
+            printf("\n El estado es %d",auxEstado);
 
+        }
 
     }
 

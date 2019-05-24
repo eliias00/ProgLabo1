@@ -1,13 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "empleado.h"
 
-Empleado* Emp_new(void)
+Persona* Emp_new(void)
 {
-    return (Empleado*) malloc(sizeof(Empleado));
+    return (Persona*) malloc(sizeof(Persona));
 }
 
-int Emp_delete(Empleado* this)
+int Emp_delete(Persona* this)
 {
     int retorno = -1;
     if(this != NULL)
@@ -17,8 +18,57 @@ int Emp_delete(Empleado* this)
     }
     return retorno;
 }
+void archivo (void)
+{
+    char bufferId[4096];
+    char bufferNombre[4096];
+    char bufferApellido[4096];
+    char bufferEstado[4096];
+    FILE *pFile=NULL;
 
-int Emp_setId(Empleado* this, int id)
+    pFile = fopen("data.csv","r");
+
+    if(pFile!=NULL)
+    {
+        while(!feof(pFile))
+        {
+            fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",
+                   bufferId,bufferNombre,bufferApellido,bufferEstado);
+        }
+        fclose(pFile);
+    }
+}
+Persona *pers_new(char *id,char *nom,char *ape,char *est)
+{
+    Persona *retorno = NULL;
+    Persona *auxPers;
+    if(id != NULL && nom!=NULL && ape!=NULL && est!=NULL &&)
+    {
+        auxPers=Emp_new();
+        if(auxPers!=NULL)
+        {
+          if(!Emp_setNombre(auxPers,nom)&& !Emp_setApellido(auxPers,ape)&&
+             !Emp_setIdStr(auxPers,id)&& !Emp_setEstadoStr(auxPers,Est))
+          {
+            retorno=auxPers;
+          }
+          else
+          {
+            Emp_delete(auxPers);
+          }
+        }
+    }
+}
+int Emp_setIdStr(Persona* this, char *id)
+{
+    int retorno = -1;
+    if(this != NULL && id != NULL && !isvalidNamber(id))
+    {
+        retorno = Emp_setId(this, atoi(id));
+    }
+    return retorno;
+}
+int Emp_setId(Persona* this, int id)
 {
     int retorno = -1;
     if(this != NULL && id >= 0)
@@ -29,7 +79,7 @@ int Emp_setId(Empleado* this, int id)
     return retorno;
 }
 
-int Emp_getId(Empleado* this, int* resultado)
+int Emp_getId(Persona* this, int* resultado)
 {
     int retorno = -1;
     if(this != NULL && resultado != NULL)
@@ -39,42 +89,40 @@ int Emp_getId(Empleado* this, int* resultado)
     }
     return retorno;
 }
-int Emp_setPeso(Empleado* this, float peso)
+
+int Emp_getId(Persona* this, char* resultado)
 {
     int retorno = -1;
-    if(this != NULL && peso>=10.5)
-    {
-        this->peso =peso;
-        retorno = 0;
-    }
-    return retorno;
-}
-int Emp_getPeso(Empleado* this, float* resultado)
-{
-    int retorno = -1;
+    int bufferInt;
     if(this != NULL && resultado != NULL)
     {
-        *resultado = this->peso;
+        Emp_getId(this,&bufferInt);
+        sprintf(resultado,"%d", bufferInt);
         retorno = 0;
     }
     return retorno;
 }
-int Emp_setNombre(Empleado* this, char* nombre)
+
+
+
+
+
+int Emp_setNombre(Persona* this, char* nombre)
 {
     int retorno = -1;
-    if(this != NULL && isValidName(nombre))
+    if(this != NULL )
     {
         strcpy(this->nombre,nombre);
         retorno = 0;
     }
     return retorno;
 }
-int Emp_getNombre(Empleado* this, char* resultado)
+int Emp_getNombre(Persona* this, char* resultado)
 {
     int retorno = -1;
     if(this != NULL && resultado != NULL)
     {
-        strcpy(resultado , this->nombre);
+        strcpy(resultado, this->nombre);
         retorno = 0;
     }
     return retorno;
@@ -86,46 +134,50 @@ int Emp_getNombre(Empleado* this, char* resultado)
 
 
 
-int Emp_setEstado(Empleado* this, int estado);
-int Emp_getEstado(Empleado* this, int* resultado);
-
-/*int isValidFloat (char* pStr)
+int Emp_setApellido(Persona* this, char* apellido)
 {
-    int i=0;
-    int contadorPuntos=0;
-    while(pStr[i]!='\0')
+    int retorno = -1;
+    if(this != NULL )
     {
-        if((pStr[i]<'0' || pStr[i]>'9')&&(pStr[i]!='.'))
-        {
-
-            return 0;
-        }
-        if(pStr[i]=='.')
-        {
-            contadorPuntos++;
-            if(contadorPuntos>1)
-            {
-                return 0;
-            }
-        }
-        i++;
+        strcpy(this->apellido,apellido);
+        retorno = 0;
     }
-    return 1;
-}*/
-int isValidName(char *cadena)
+    return retorno;
+}
+int Emp_getApellido(Persona* this, char* resultado)
 {
-    int retorno = 1;
-    int i;
-    for(i=0; cadena[i] != '\0'; i++)
+    int retorno = -1;
+    if(this != NULL && resultado != NULL)
     {
-        if((cadena[i] > 'Z' || cadena[i] < 'A') && (cadena[i] > 'z' || cadena[i] < 'a'))
-        {
-            retorno = 0;
-            break;
-        }
+        strcpy(resultado, this->apellido);
+        retorno = 0;
     }
     return retorno;
 }
 
+
+
+
+
+int Emp_setEstado(Persona* this, char estado)
+{
+    int retorno = -1;
+    if(this != NULL && estado >= 0)
+    {
+        this->estado = estado;
+        retorno = 0;
+    }
+    return retorno;
+}
+int Emp_getEstado(Persona* this, int* resultado)
+{
+    int retorno = -1;
+    if(this != NULL && resultado != NULL)
+    {
+        *resultado = this->estado;
+        retorno = 0;
+    }
+    return retorno;
+}
 
 
