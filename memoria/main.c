@@ -2,50 +2,42 @@
 #include <stdlib.h>
 #include <string.h>
 #include "empleado.h"
-
+#include "valid.h"
 int main()
 {
-    Persona *pArrayPersona[1000];
-    int ultimoElementoArrayPersona = 0;
-    int indiceActual;
-    int auxInt;
-    int auxEstado;
+    Persona *pArrayPersona[1001];
+    char bufferId      [1050];
+    char bufferNombre  [1050];
+    char bufferApellido[1050];
+    char bufferEstado  [1050];
+    int i = 0;
+    FILE *pFile = NULL;
 
-    indiceActual = ultimoElementoArrayPersona;
-    pArrayPersona[indiceActual] =  Emp_new();
+    pFile = fopen("data.csv","r");
 
-
-    if(pArrayPersona[indiceActual] != NULL)
+    if(pFile == NULL)
     {
-        ultimoElementoArrayPersona++;
-        printf("OK");
-        if(!Emp_setId(pArrayPersona[indiceActual],14))
-        {
-            Emp_getId(pArrayPersona[indiceActual], &auxInt);
-            printf("\n El id es %d",auxInt);
-
-        }
-         if(!Emp_setNombre(pArrayPersona[indiceActual],"elias"))
-        {
-            Emp_getNombre(pArrayPersona[indiceActual], aux);
-            printf("\n El nombre es %s",aux);
-
-        }
-        if(!Emp_setApellido(pArrayPersona[indiceActual],"troncoso"))
-        {
-            Emp_getApellido(pArrayPersona[indiceActual], aux1);
-            printf("\n El nombre es %s",aux1);
-
-        }
-        if(!Emp_setEstado(pArrayPersona[indiceActual],1))
-        {
-            Emp_getEstado(pArrayPersona[indiceActual], &auxEstado);
-            printf("\n El estado es %d",auxEstado);
-
-        }
-
+        printf("El archivo no existe");
     }
+    else
+    {
+        do
+        {
+            fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",bufferId,bufferNombre,bufferApellido,bufferEstado);
+            //printf("Lei: %s %s %s %s\n",bufferId,bufferNombre,bufferApellido,bufferEstado);
 
+            pArrayPersona[i]=pers_new(bufferId,bufferNombre,bufferApellido,bufferEstado);
+            if(pArrayPersona[i] != NULL)
+            {
+                printf("id:%s nombre:%s apellido:%s estado:%s\n",bufferId,bufferNombre,bufferApellido,bufferEstado);
+            }
+            i++;
+
+        }
+        while(!feof(pFile));
+
+        fclose(pFile);
+    }
 
     return 0;
 }

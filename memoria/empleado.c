@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "empleado.h"
+#include "valid.h"
 
 Persona* Emp_new(void)
 {
@@ -18,37 +19,17 @@ int Emp_delete(Persona* this)
     }
     return retorno;
 }
-void archivo (void)
-{
-    char bufferId[4096];
-    char bufferNombre[4096];
-    char bufferApellido[4096];
-    char bufferEstado[4096];
-    FILE *pFile=NULL;
-
-    pFile = fopen("data.csv","r");
-
-    if(pFile!=NULL)
-    {
-        while(!feof(pFile))
-        {
-            fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",
-                   bufferId,bufferNombre,bufferApellido,bufferEstado);
-        }
-        fclose(pFile);
-    }
-}
 Persona *pers_new(char *id,char *nom,char *ape,char *est)
 {
     Persona *retorno = NULL;
     Persona *auxPers;
-    if(id != NULL && nom!=NULL && ape!=NULL && est!=NULL &&)
+    if(id != NULL && nom!=NULL && ape!=NULL && est!=NULL )
     {
         auxPers=Emp_new();
         if(auxPers!=NULL)
         {
           if(!Emp_setNombre(auxPers,nom)&& !Emp_setApellido(auxPers,ape)&&
-             !Emp_setIdStr(auxPers,id)&& !Emp_setEstadoStr(auxPers,Est))
+             !Emp_setIdStr(auxPers,id)&& !Emp_setEstadoStr(auxPers,est))
           {
             retorno=auxPers;
           }
@@ -62,7 +43,7 @@ Persona *pers_new(char *id,char *nom,char *ape,char *est)
 int Emp_setIdStr(Persona* this, char *id)
 {
     int retorno = -1;
-    if(this != NULL && id != NULL && !isvalidNamber(id))
+    if(this != NULL && id != NULL && !isValidint(id))
     {
         retorno = Emp_setId(this, atoi(id));
     }
@@ -90,7 +71,7 @@ int Emp_getId(Persona* this, int* resultado)
     return retorno;
 }
 
-int Emp_getId(Persona* this, char* resultado)
+int Emp_getIdStr(Persona* this, char* resultado)
 {
     int retorno = -1;
     int bufferInt;
@@ -102,11 +83,6 @@ int Emp_getId(Persona* this, char* resultado)
     }
     return retorno;
 }
-
-
-
-
-
 int Emp_setNombre(Persona* this, char* nombre)
 {
     int retorno = -1;
@@ -127,12 +103,6 @@ int Emp_getNombre(Persona* this, char* resultado)
     }
     return retorno;
 }
-
-
-
-
-
-
 
 int Emp_setApellido(Persona* this, char* apellido)
 {
@@ -155,11 +125,16 @@ int Emp_getApellido(Persona* this, char* resultado)
     return retorno;
 }
 
-
-
-
-
-int Emp_setEstado(Persona* this, char estado)
+int Emp_setEstadoStr(Persona* this, char *estado)
+{
+    int retorno = -1;
+    if(this != NULL && estado != NULL && !isValidint(estado))
+    {
+        retorno = Emp_setEstado(this, atoi(estado));
+    }
+    return retorno;
+}
+int Emp_setEstado(Persona* this, int estado)
 {
     int retorno = -1;
     if(this != NULL && estado >= 0)
@@ -169,6 +144,7 @@ int Emp_setEstado(Persona* this, char estado)
     }
     return retorno;
 }
+
 int Emp_getEstado(Persona* this, int* resultado)
 {
     int retorno = -1;
@@ -180,4 +156,15 @@ int Emp_getEstado(Persona* this, int* resultado)
     return retorno;
 }
 
-
+int Emp_getEstadoStr(Persona* this, char* resultado)
+{
+    int retorno = -1;
+    int bufferInt;
+    if(this != NULL && resultado != NULL)
+    {
+        Emp_getEstado(this,&bufferInt);
+        sprintf(resultado,"%d", bufferInt);
+        retorno = 0;
+    }
+    return retorno;
+}
