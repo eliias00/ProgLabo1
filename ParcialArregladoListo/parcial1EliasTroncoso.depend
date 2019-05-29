@@ -530,3 +530,92 @@
 	"instrumento.h"
 	"informes.h"
 
+1559150872 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1558919746 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\menu.h
+
+1558919746 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\orquesta.h
+
+1558919746 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\validaciones.h
+
+1558919746 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\musico.h
+	"instrumento.h"
+
+1558919746 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\instrumento.h
+
+1558919746 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\informes.h
+
+1559150941 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1559148251 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\instrumento.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1559148254 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+
+1559148257 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\musico.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"informes.h"
+
+1559148262 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\orquesta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+
+1559148366 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcialarregladolisto\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"menu.h"
+	"orquesta.h"
+	"validaciones.h"
+	"musico.h"
+	"musico.h"
+	"instrumento.h"
+	"informes.h"
+

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -146,42 +146,43 @@ void informeC(Orquesta *arrayOrq,int cantOrq,Musico *arrayMus,int cantMus)
     int j;
     int k;
     int l;
-    int cont=0;
+    int cont;
     char idAut[50];
     int auxAut;
-
-    for(l=0;l<cantOrq;l++)
+    int flag=0;
+    Orquesta auxOrq[cantOrq];
+    for(i=0; i<cantOrq; i++)
     {
-        if(arrayOrq[l].isEmpty!=VACIO)
+        if(arrayOrq[i].isEmpty==LLENO )
         {
-            printf("id de orquesta:%d\n",arrayOrq[l].tipo);
-        }
-    }
-    getInt("ingrese el id de la orquesta: ","\nerror,vuelva a intentar",0,20,1,idAut);
-    auxAut=atoi(idAut);
-     for(i=0; i<cantOrq; i++)
-    {
-        if(arrayOrq[i].isEmpty==LLENO && auxAut==arrayOrq[i].id)
-       {
+            flag=1;
+            auxOrq[i]=arrayOrq[i];
+            cont=0;
             for(j=0; j<cantMus; j++)
             {
-                if(arrayOrq[i].id==arrayMus[j].idOrq)
+                if(flag!=0&&arrayOrq[i].id==auxOrq[0].id)
                 {
-                    cont++;
+                    if(arrayOrq[i].id==arrayMus[j].idOrq)
+                    {
+                        cont++;
+                    }
+                }
+                else if(flag!=0&&arrayOrq[i].id!=auxOrq[0].id)
+                {
+                    if(arrayOrq[i].id==arrayMus[j].idOrq)
+                    {
+                        cont++;
+                    }
                 }
             }
         }
-    }
-    for(k=0; k<cantOrq; k++)
-    {
-        if(cont<6 && arrayOrq[k].isEmpty==LLENO)
+        if( cont<6 && arrayOrq[i].isEmpty==LLENO)
         {
             printf("id:%d nombre:%s tipo:%d lugar:%s \n",
-                   arrayOrq[k].id,
-                   arrayOrq[k].nombre,
-                   arrayOrq[k].tipo,
-                   arrayOrq[k].lugar);
-                   break;
+                   arrayOrq[i].id,
+                   arrayOrq[i].nombre,
+                   arrayOrq[i].tipo,
+                   arrayOrq[i].lugar);
         }
     }
 }
@@ -193,7 +194,7 @@ void informeD(Orquesta *arrayOrq,int cantOrq,Instrumento *arrayIns,int cantIns,M
     int j;
     int k;
     int l;
-    for(l=0;l<cantOrq;l++)
+    for(l=0; l<cantOrq; l++)
     {
         if(arrayOrq[l].isEmpty!=VACIO)
         {
@@ -351,7 +352,7 @@ void informeF(Orquesta *arrayOrq,int cantOrq,Musico *arrayMus,int cantMus)
         if(arrayOrq[i].isEmpty ==LLENO)
         {
             printf("id:%d nombre:%s lugar:%s tipo:%d\ncantidad de musicos que posee:%d\n",
-            minOrq[i].id,minOrq[i].nombre,minOrq[i].lugar,minOrq[i].tipo,cantidadDeOrquestas);
+                   minOrq[i].id,minOrq[i].nombre,minOrq[i].lugar,minOrq[i].tipo,cantidadDeOrquestas);
         }
     }
 }

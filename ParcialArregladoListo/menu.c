@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdio_ext.h>
+//#include <stdio_ext.h>
 #include <stdlib.h>
 #include <string.h>
 #include "menu.h"
@@ -44,7 +44,7 @@ int funcionMenu(void)
        arrayOrq[1].isEmpty=LLENO;
        arrayOrq[1].tipo=2;
 
-   /*    strcpy(arrayOrq[3].nombre,"orquesta3");
+       strcpy(arrayOrq[3].nombre,"orquesta3");
        strcpy(arrayOrq[3].lugar,"lugar2");
        arrayOrq[3].id=3;
        arrayOrq[3].isEmpty=LLENO;
@@ -54,7 +54,7 @@ int funcionMenu(void)
        strcpy(arrayOrq[4].lugar,"lugar3");
        arrayOrq[4].id=4;
        arrayOrq[4].isEmpty=LLENO;
-       arrayOrq[4].tipo=2;*/
+       arrayOrq[4].tipo=2;
 
 //*******************************************
     /*   strcpy(arrayMus[0].nombre,"mus1");
@@ -204,7 +204,7 @@ int funcionMenu(void)
        arrayMus[3].edad=27;
        arrayMus[3].isEmpty=LLENO;
        arrayMus[3].idIns=4;
-       arrayMus[3].idOrq=1;
+       arrayMus[3].idOrq=4;
 
        strcpy(arrayMus[4].nombre,"mus5");
        strcpy(arrayMus[4].apellido,"mus5");
@@ -212,7 +212,7 @@ int funcionMenu(void)
        arrayMus[4].edad=22;
        arrayMus[4].isEmpty=LLENO;
        arrayMus[4].idIns=5;
-       arrayMus[4].idOrq=1;
+       arrayMus[4].idOrq=4;
 
        strcpy(arrayMus[5].nombre,"mus6");
        strcpy(arrayMus[5].apellido,"mus6");
@@ -220,7 +220,7 @@ int funcionMenu(void)
        arrayMus[5].edad=35;
        arrayMus[5].isEmpty=LLENO;
        arrayMus[5].idIns=6;
-       arrayMus[5].idOrq=1;
+       arrayMus[5].idOrq=4;
 
        strcpy(arrayMus[6].nombre,"mus7");
        strcpy(arrayMus[6].apellido,"mus7");
@@ -228,7 +228,7 @@ int funcionMenu(void)
        arrayMus[6].edad=27;
        arrayMus[6].isEmpty=LLENO;
        arrayMus[6].idIns=7;
-       arrayMus[6].idOrq=2;
+       arrayMus[6].idOrq=4;
 
        strcpy(arrayMus[7].nombre,"mus8");
        strcpy(arrayMus[7].apellido,"mus8");
@@ -236,7 +236,7 @@ int funcionMenu(void)
        arrayMus[7].edad=22;
        arrayMus[7].isEmpty=LLENO;
        arrayMus[7].idIns=8;
-       arrayMus[7].idOrq=2;
+       arrayMus[7].idOrq=4;
 
        strcpy(arrayMus[8].nombre,"mus9");
        strcpy(arrayMus[8].apellido,"mus9");
@@ -244,7 +244,7 @@ int funcionMenu(void)
        arrayMus[8].edad=35;
        arrayMus[8].isEmpty=LLENO;
        arrayMus[8].idIns=9;
-       arrayMus[8].idOrq=2;
+       arrayMus[8].idOrq=4;
     //**********************************************
     do
     {
