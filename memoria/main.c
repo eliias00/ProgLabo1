@@ -5,37 +5,32 @@
 #include "valid.h"
 int main()
 {
-    Persona *pArrayPersona[1001];
-    char bufferId      [1050];
-    char bufferNombre  [1050];
-    char bufferApellido[1050];
-    char bufferEstado  [1050];
+    Persona *pArrayPersona[2000];
     int i = 0;
+    int flag=0;
+    char bufferId[50];
+    char bufferName[50];
+    char bufferApellido[50];
+    char bufferEstado[50];
+
     FILE *pFile = NULL;
+    pFile = fopen("data.csv", "r");
 
-    pFile = fopen("data.csv","r");
-
-    if(pFile == NULL)
+    if(pFile != NULL)
     {
-        printf("El archivo no existe");
-    }
-    else
-    {
-        do
+        while(!feof(pFile))
         {
-            fscanf(pFile,"%[^,],%[^,],%[^,],%[^\n]\n",bufferId,bufferNombre,bufferApellido,bufferEstado);
-            //printf("Lei: %s %s %s %s\n",bufferId,bufferNombre,bufferApellido,bufferEstado);
-
-            pArrayPersona[i]=pers_new(bufferId,bufferNombre,bufferApellido,bufferEstado);
-            if(pArrayPersona[i] != NULL)
+            fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", bufferId, bufferName, bufferApellido, bufferEstado);
+            if(flag == 0)
             {
-                printf("id:%s nombre:%s apellido:%s estado:%s\n",bufferId,bufferNombre,bufferApellido,bufferEstado);
+                flag++;
+
             }
+            pArrayPersona[i] = pers_new(bufferId, bufferName, bufferApellido, bufferEstado);
             i++;
-
+      //  Emp_getApellido(pArrayPersona[50], bufferApellido);
+        printf("nombre:%s | Apellido:%s\n",bufferName,bufferApellido);
         }
-        while(!feof(pFile));
-
         fclose(pFile);
     }
 

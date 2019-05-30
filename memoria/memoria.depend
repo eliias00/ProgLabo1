@@ -24,28 +24,28 @@
 	<string.h>
 	"empleado.h"
 
-1559085482 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/empleado.c
+1559252167 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/empleado.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"empleado.h"
 	"valid.h"
 
-1559078942 /home/alumno/Escritorio/ProgLaboMauricio1/memoria/empleado.h
+1559252167 /home/alumno/Escritorio/ProgLaboMauricio1/memoria/empleado.h
 
-1559086389 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/main.c
+1559252167 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"empleado.h"
 	"valid.h"
 
-1559079317 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/valid.c
+1559252167 source:/home/alumno/Escritorio/ProgLaboMauricio1/memoria/valid.c
 	<stdio.h>
 	<stdio_ext.h>
 	<stdlib.h>
 	<string.h>
 	"valid.h"
 
-1559079131 /home/alumno/Escritorio/ProgLaboMauricio1/memoria/valid.h
+1559252167 /home/alumno/Escritorio/ProgLaboMauricio1/memoria/valid.h
 
