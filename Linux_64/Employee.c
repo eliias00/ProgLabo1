@@ -19,17 +19,17 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
         auxEmployee=employee_new();
         if(auxEmployee!=NULL)
         {
-          if(!employee_setNombre(auxEmployee,nombreStr)&&
-             !Employee_setHorasTrabajadasStr(auxEmployee,horasTrabajadasStr)&&
-             !Employee_setIdStr(auxEmployee,idStr)&&
-             !Employee_setSueldoStr(auxEmployee,sueldoStr))
-          {
-            retorno=auxEmployee;
-          }
-          else
-          {
-            employee_delete(auxEmployee);
-          }
+            if(!employee_setNombre(auxEmployee,nombreStr)&&
+               !Employee_setHorasTrabajadasStr(auxEmployee,horasTrabajadasStr)&&
+               !Employee_setIdStr(auxEmployee,idStr)&&
+               !Employee_setSueldoStr(auxEmployee,sueldoStr))
+            {
+                retorno=auxEmployee;
+            }
+            else
+            {
+                employee_delete(auxEmployee);
+            }
         }
     }
     return retorno;
@@ -147,4 +147,69 @@ int employee_getSueldo(Employee* this,int* sueldo)
         retorno = 0;
     }
     return retorno;
+}
+int generadorId(LinkedList* pArrayListEmployee)
+{
+    Employee* auxiliar;
+    int cant;
+    int auxId;
+    int maxID = -1;
+    int i;
+    if(pArrayListEmployee != NULL)
+    {
+        cant = ll_len(pArrayListEmployee);
+        for(i=0;i<cant;i++)
+        {
+            auxiliar = ll_get(pArrayListEmployee, i);
+            employee_getId(auxiliar, &auxId);
+            if(auxId > maxID)
+            {
+                maxID = auxId;
+            }
+        }
+    }
+    maxID += 1;
+    return maxID;
+}
+int buscaId (LinkedList* pArrayListEmployee, int *idEncontrado)
+{
+    int i;
+    int retorno = -1;
+    int id;
+    Employee *empleado;
+    int auxid;
+    int cant;
+
+    printf("\ningrese id a buscar: ");
+    scanf("%d", &auxid);
+    cant = ll_len(pArrayListEmployee);
+    for(i=0; i < cant; i++)
+    {
+        empleado = ll_get(pArrayListEmployee, i);
+        employee_getId(empleado,&id);
+        if (id == auxid)
+        {
+            retorno=0;
+            *idEncontrado=i;
+            break;
+        }
+    }
+    return retorno;
+}
+int employee_compararPorNombre(void *this1,void *this2)
+{
+    char auxStrA[4096];
+    char auxStrB[4096];
+    employee_getNombre((Employee*)this1,auxStrA);
+    employee_getNombre((Employee*)this1,auxStrB);
+    if(strcmp(auxStrA,auxStrB)>0)
+    {
+    return 1;
+    }
+    else if(strcmp(auxStrA,auxStrB)<0)
+    {
+    return-1;
+    }
+    return 0;
+
 }

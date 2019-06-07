@@ -27,4 +27,5 @@ int employee_getSueldo(Employee* this,int* sueldo);
 int Employee_setIdStr(Employee* this, char *id);
 int Employee_setSueldoStr(Employee* this, char *sueldo);
 int Employee_setHorasTrabajadasStr(Employee* this, char *horasTrabajadas);
+int employee_compararPorNombre(void *this1,void *this2);
 #endif // employee_H_INCLUDED

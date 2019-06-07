@@ -88,3 +88,45 @@
 
 1533133022 /home/alumno/Escritorio/Linux_64/parser.h
 
+1559868874 source:/home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/Controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+
+1559856480 /home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/LinkedList.h
+
+1559868899 /home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/Employee.h
+
+1559856480 /home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/parser.h
+
+1559868985 source:/home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/Employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1559856480 /home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/Controller.h
+
+1559869051 source:/home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1559868968 source:/home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1559859738 source:/home/alumno/Escritorio/ProgLaboMauricio1/Linux_64/valid.c
+	<stdio.h>
+	<stdio_ext.h>
+	<stdlib.h>
+	<string.h>
+

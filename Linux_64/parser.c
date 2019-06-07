@@ -16,6 +16,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
     char bufferName[4096];
     char bufferHoras[4096];
     char bufferSueldo[4096];
+
     Employee *auxEmp;
 
     fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", bufferId, bufferName, bufferHoras,bufferSueldo);
@@ -27,6 +28,7 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
             auxEmp=employee_newParametros(bufferId, bufferName, bufferHoras,bufferSueldo);
              ll_add(pArrayListEmployee, auxEmp);
         }
+         ll_sort(pArrayListEmployee, employee_compararPorNombre,0);
     }
     return 1;
 }
@@ -39,20 +41,17 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee)
  */
 int parser_EmployeeFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 {
-    char bufferId[50];
-    char bufferName[50];
-    char bufferHoras[50];
-    char bufferSueldo[50];
-    Employee *auxEmp;
+    Employee auxEmp;
+    Employee *pEmp;
 
-    fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", bufferId, bufferName, bufferHoras,bufferSueldo);
+
     if(pFile != NULL && pArrayListEmployee != NULL)
     {
         while(!feof(pFile))
         {
-            fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", bufferId, bufferName, bufferHoras,bufferSueldo);
-            auxEmp=employee_newParametros(bufferId, bufferName, bufferHoras,bufferSueldo);
-             ll_add(pArrayListEmployee, auxEmp);
+           fread(&auxEmp,sizeof(Employee),1,pFile);
+        pEmp=employee_newParametros(pEmp->id, pEmp->horasTrabajadas, pEmp->nombre,pEmp->sueldo);
+             ll_add(pArrayListEmployee, pEmp);
         }
 
     }

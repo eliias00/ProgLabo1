@@ -25,15 +25,29 @@ int main()
     LinkedList* listaEmpleados = ll_newLinkedList();
 
     do{
-         printf("ingrese opcion: ");
+         printf("\ningrese opcion: ");
         scanf("%d",&option);
         switch(option)
         {
             case 1:
                 controller_loadFromText("data.csv",listaEmpleados);
+                printf("se ha cargado data.csv(txt)");
                 break;
             case 2:
                 controller_loadFromBinary("data.csv",listaEmpleados);
+                printf("se ha cargado data.csv(binario)");
+                break;
+            case 3:
+                controller_addEmployee(listaEmpleados);
+                break;
+            case 4:
+                 controller_editEmployee(listaEmpleados);
+                break;
+            case 6:
+                 controller_saveAsBinary("data.csv", listaEmpleados);
+                break;
+            case 7:
+                controller_loadFromText("data.csv", listaEmpleados);
                 break;
         }
     }while(option != 10);
