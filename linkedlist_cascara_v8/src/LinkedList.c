@@ -502,26 +502,99 @@ int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order)
 {
     int returnAux =-1;
     int i;
-    void* pElement1;
-    void* pElement2;
-    int flagSwap;
-    if(this!=NULL && order>=0 && pFunc != NULL)
+    int size=ll_len(this);
+    int flag;
+    void* thisElementoUno;
+    void* thisElementoDos;
+    int retOrderValue;
+
+    if(this != NULL && size >=0 && pFunc != NULL && (order == 1 || order == 0) )
     {
         do
         {
-            flagSwap=0;
-            for (i = 0; i < ll_len(this)-1; i++)
+            flag = 0;
+            for(i=0;i<size;i++)
             {
-                pElement1 = ll_get(this, i);
-                pElement2 = ll_get(this, i + 1);
-                if(((pFunc(pElement1, pElement2) < 0) && !order)||((pFunc(pElement1, pElement2) > 0) && order))
+                thisElementoUno = ll_get(this,i);
+                thisElementoDos = ll_get(this,i+1);
+                if(thisElementoUno != NULL && thisElementoDos != NULL)
                 {
-                    flagSwap=1;
-                    ll_set(this, i, pElement2);
-                    ll_set(this, i + 1, pElement1);
+                    retOrderValue = pFunc(thisElementoUno , thisElementoDos);
+                    if((order == 0 && retOrderValue == -1) || (retOrderValue == 1 && order == 1))
+                    {
+                        flag = 1;
+                        ll_set(this,i,thisElementoDos);
+                        ll_set(this,i+1,thisElementoUno);
+                    }
                 }
             }
-        }while(flagSwap);
+        }while(flag == 1);
+        returnAux = 0;
+    }
+    return returnAux;
+}
+/** \brief mapea en base a la funcion pasada
+ * \param this LinkedList* Puntero a la lista
+ * \param pFunc (*pFunc) Puntero a funcion
+ * \return int Retorna  (-1) Error: si el puntero a la listas es NULL
+                        ( 0) Si ok
+ */
+int ll_map(LinkedList* this,int (*pFunc)(void*))
+{
+     int returnAux =-1;
+     int i;
+    if(this!=NULL && pFunc !=NULL)
+    {
+        returnAux =0;
+        for(i=0;i<ll_len(this);i++)
+        {
+            pFunc(ll_get(this,i));
+        }
+    }
+     return returnAux;
+}
+
+LinkedList* ll_filter (LinkedList* this, int (*pFunc)(void*))
+{
+    int i;
+    void* pElemento;
+    LinkedList* newList=NULL;
+
+    if (this!= NULL && pFunc != NULL)
+    {
+        newList = ll_newLinkedList();
+        for (i=0; i<ll_len(this); i++)
+        {
+            pElemento = ll_get(this,i);
+            if(pFunc(pElemento)==1)
+            {
+                ll_add(newList,pElemento);
+            }
+        }
+    }
+    return newList;
+}
+
+int ll_reduce (LinkedList* this, int (*pFunc)(void*))
+{
+    int i;
+    void* pElemento;
+    int size=ll_len(this);
+    int returnAux =-1;
+
+    if (this!= NULL && pFunc != NULL)
+    {
+        for (i=0; i<size; i++)
+        {
+            pElemento = ll_get(this,i);
+
+            if(pFunc(pElemento)==1)
+            {
+                ll_remove(this,i);
+                i--;
+                size--;
+            }
+        }
         returnAux=0;
     }
     return returnAux;
