@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1560900779 source:/home/alumno/Escritorio/ProgLaboMauricio1/EjercicioPre2doParcialV2/linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"linkedlist.h"
+
+1560900733 /home/alumno/Escritorio/ProgLaboMauricio1/EjercicioPre2doParcialV2/linkedlist.h
+
