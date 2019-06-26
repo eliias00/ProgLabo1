@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdio_ext.h>
-#include <string.h>
-#include "linkedlist.h"
+#include "utn.h"
 #include "Empleado.h"
+#include <string.h>
 
 Employee* employee_new()
 {
@@ -23,7 +22,9 @@ Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajad
                !Employee_setIdStr(auxEmployee,idStr)&&
                !Employee_setSueldoStr(auxEmployee,sueldoStr))
             {
+
                 retorno=auxEmployee;
+
             }
             else
             {
@@ -123,11 +124,11 @@ int Employee_setSueldoStr(Employee* this, char *sueldo)
     int retorno = -1;
     if(this != NULL && sueldo >=0)
     {
-        retorno = employee_setSueldo(this,atoi(sueldo));
+        retorno = employee_setSueldo(this,atof(sueldo));
     }
     return retorno;
 }
-int employee_setSueldo(Employee* this,int sueldo)
+int employee_setSueldo(Employee* this,float sueldo)
 {
     int retorno = -1;
     if(this != NULL && sueldo >=0)
@@ -137,7 +138,7 @@ int employee_setSueldo(Employee* this,int sueldo)
     }
     return retorno;
 }
-int employee_getSueldo(Employee* this,int* sueldo)
+int employee_getSueldo(Employee* this,float* sueldo)
 {
     int retorno = -1;
     if(this != NULL && sueldo != NULL)
@@ -147,54 +148,7 @@ int employee_getSueldo(Employee* this,int* sueldo)
     }
     return retorno;
 }
-int generadorId(Linkedlist* pArrayListEmployee)
-{
-    Employee* auxiliar;
-    int cant;
-    int auxId;
-    int maxID = -1;
-    int i;
-    if(pArrayListEmployee != NULL)
-    {
-        cant = ll_len(pArrayListEmployee);
-        for(i=0;i<cant;i++)
-        {
-            auxiliar = ll_get(pArrayListEmployee, i);
-            employee_getId(auxiliar, &auxId);
-            if(auxId > maxID)
-            {
-                maxID = auxId;
-            }
-        }
-    }
-    maxID += 1;
-    return maxID;
-}
-int buscaId (Linkedlist* pArrayListEmployee, int *idEncontrado)
-{
-    int i;
-    int retorno = -1;
-    int id;
-    Employee *empleado;
-    int auxid;
-    int cant;
 
-    printf("\ningrese id a buscar: ");
-    scanf("%d", &auxid);
-    cant = ll_len(pArrayListEmployee);
-    for(i=0; i < cant; i++)
-    {
-        empleado = ll_get(pArrayListEmployee, i);
-        employee_getId(empleado,&id);
-        if (id == auxid)
-        {
-            retorno=0;
-            *idEncontrado=i;
-            break;
-        }
-    }
-    return retorno;
-}
 int employee_compararPorNombre(void *this1,void *this2)
 {
     char auxStrA[4096];
@@ -212,7 +166,4 @@ int employee_compararPorNombre(void *this1,void *this2)
     }
       return retorno;
 }
-void em_calcularSueldo(void* p)
-{
 
-}

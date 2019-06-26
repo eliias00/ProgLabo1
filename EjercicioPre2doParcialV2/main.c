@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Empleado.h"
-#include "linkedlist.h"
+#include "LinkedList.h"
 #include "Parser.h"
-#include "controller.h"
+#include "Controller.h"
 
 /**
     Realizar un programa que lee de un archivo los datos de empleados y los guarda en un arraylist de entidades
@@ -23,39 +23,19 @@
     original pero con una columna mas al final, en donde se indicara el sueldo calculado.
 */
 
-int generarArchivoSueldos(char* fileName,Linkedlist* listaEmpleados);
+int generarArchivoSueldos(void* pElement);
 
 int main()
 {
-    // Definir lista de empleados
-    Linkedlist* listaEmpleados=ll_newLinkedList;
 
-    // Crear lista empledos
-    //...
+    LinkedList* listaEmpleados = ll_newLinkedList();
 
-    // Leer empleados de archivo data.csv
-    if(parser_parseEmpleados("data.csv",listaEmpleados)==1)
+
+    if(!controller_loadFromText("data.csv",listaEmpleados))
     {
-        // Calcular sueldos
-        printf("Calculando sueldos de empleados\n");
-        al_map(listaEmpleados,em_calcularSueldo);
-
-        // Generar archivo de salida
-        if(generarArchivoSueldos("sueldos.csv",listaEmpleados)==1)
-        {
-            printf("Archivo generado correctamente\n");
-        }
-        else
-            printf("Error generando archivo\n");
+        controller_saveAsText("informes.csv",listaEmpleados);
     }
-    else
-        printf("Error leyando empleados\n");
 
 
     return 0;
-}
-
-int generarArchivoSueldos(char* fileName,Linkedlist* listaEmpleados)
-{
-    return 1;
 }
