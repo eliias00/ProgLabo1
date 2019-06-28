@@ -1,95 +1,34 @@
-/**\brief toma por teclado lo que ingrese el usuario
- *\param valida
- * \return retorna 0 si dio bien o -1 si dio mal
- */
-int getString(char *msg,char *msgError,int minimo,int maximo,int reintentos,char *resultado);
+int getString(char* msg, char* msgError, int min, int max, int* reintentos, char* resultado);
 
-/**\brief valida que sea letra
- * \return retorna 0 si dio bien o 1 si dio mal
- */
-int isValidName(char *cadena);
+int utn_getName(char* msg,char* msgError,int min,int max,int reintentos,char* resultado);
+int isValidName(char* stringRecibido);
 
-/**\brief valida
- *\param llama a getString y isValidName y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getName(char *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+int utn_getUnsignedInt(  char* msg,char* msgError,int minSize,int maxSize,int min,int max,int reintentos,int* input);
+int isValidNumber(char* stringRecibido);
 
-/**\brief valida que sea numero
- * \return retorna 0 si dio bien o 1 si dio mal
- */
-int isValidFloat (char* pStr);
+int utn_getSignedInt(char* msg, char* msgError, int minSize, int maxSize, int min, int max, int reintentos, int* input);
+int isValidSignedNumber(char* stringRecibido);
 
-/**\brief valida
- *\param llama a getString y isValidFloat y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getFloat(char *mensaje, char *mensajeError, char minimo, char maximo, int reintentos, char *resultado);
+int utn_getFloat(char* msg, char* msgError, int minSize, int maxSize, int min, int max, int reintentos, float* input);
+int isValidFloatNumber(char* stringRecibido);
 
-/**\brief valida que sea numero
- * \return retorna 0 si dio bien o 1 si dio mal
- */
-int isValidint(char* cadena);
+int utn_getTelefono(char* msg, char* msgError, int minSize, int maxSize, int min, int max, int reintentos, char* input);
+int isValidTelephone(char* stringRecibido);
 
-/**\brief valida
- *\param llama a getString y isValidFloat y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getInt(char *mensaje, char *mensajeError, int minimo, int maximo, int reintentos, char *resultado);
+int utn_getDNI(char* msg, char* msgError, int minSize, int maxSize, int reintentos, char* input);
+int isValidDNI(char* stringRecibido);
 
-/**\brief valida que sea f o m o M o F
- * \return retorna 0 si dio bien o 1 si dio mal
- */
-int isValidSexo(char *cadena);
+int utn_getCUIT(char* msg, char* msgError, int reintentos, char* input);
+int isValidCUIT(char* stringRecibido);
 
-/**\brief valida
- *\param llama a getString y isValidSexo y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getSexo(char *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+int utn_getEmail(char* msg, char* msgError, int minSize, int maxSize, int reintentos, char* input);
+int isValidEmail(char* stringRecibido);
 
-/**\brief valida que tenga un @ y un . despues
- * \return retorna 0 si dio bien o 1 si dio mal
- */
-int isValidMail(char str[]);
+int utn_getTexto(char* msg, char* msgError, int minSize, int maxSize, int reintentos, char* input);
+int isValidTexto(char* stringRecibido);
 
-/**\brief valida
- *\param llama a getString y isValidMail y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getEmail(char *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+int utn_getAlfanumerico(char* msg, char* msgError, int minSize, int maxSize, int reintentos, char* input);
+int isValidAlphanumeric(char* stringRecibido);
 
-/**\brief valida que sea un numero
- * \return retorna 0 si dio bien o 1 si dio mal
- */
-int isValidDia(char cadena[]);
-
-/**\brief valida
- *\param llama a getString y isValidDia,hace una validacion entre 1 y 31 y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-
-int getDia(int *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
-
-/**\brief valida
- *\param llama a getString y isValidDia,hace una validacion entre 1 y 12 y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getMes(int *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
-
-/**\brief valida
- *\param llama a getString y isValidDia,hace una validacion entre que sea un año valido y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getAnio(int *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
-
-/**\brief valida que sea un numero y letra
- * \return retorna 0 si dio bien o 1 si dio mal
- */
-int isValidDireccion(char *cadena);
-
-/**\brief valida
- *\param llama a getString y isValidDireccion y si dieron bien copia el resultado
- * \return retorna 0 dio bien o -1 si dio mal
- */
-int getDireccion(char *resultado,char *msg,char *msgError,int minimo,int maximo,int reintentos);
+int utn_getChar(char* msg, char* msgError, int min, int max, int reintentos, char* resultado);
+int isValidChar(char charRecibido);

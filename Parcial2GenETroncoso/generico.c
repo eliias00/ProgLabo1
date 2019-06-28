@@ -4,191 +4,247 @@
 #include "valid.h"
 #include <string.h>
 
-Generico* Generico_new()
+Venta* Venta_new()
 {
-    return (Generico*) malloc(sizeof(Generico));
+    return (Venta*) malloc(sizeof(Venta));
 }
-Generico* Generico_newParametros(char* dato1,char* dato2,char* dato3,char* dato4)
+Venta* Venta_newParametros(char* id,char* tipo,char* cantidad,char* precio,char* fecha,char* cuit)
 {
-    Generico *retorno = NULL;
-    Generico *auxGenerico;
-    if(dato1 != NULL && dato2!=NULL && dato3!=NULL && dato4!=NULL )
+    Venta *retorno = NULL;
+    Venta *auxVenta;
+    if(id != NULL && tipo!=NULL && cantidad!=NULL && precio!=NULL )
     {
-        auxGenerico=Generico_new();
-        if(auxGenerico!=NULL)
+        auxVenta=Venta_new();
+        if(auxVenta!=NULL)
         {
-            if(!Generico_setdato2(auxGenerico,dato2)&&
-               !Generico_setdato3Str(auxGenerico,dato3)&&
-               !Generico_setdato1Str(auxGenerico,dato1)&&
-               !Generico_setdato4Str(auxGenerico,dato4))
+            if(!Venta_settipo(auxVenta,tipo)&&
+               !Venta_setcantidadStr(auxVenta,cantidad)&&
+               !Venta_setidStr(auxVenta,id)&&
+               !Venta_setprecioStr(auxVenta,precio)&&
+               !Venta_setfecha(auxVenta,fecha)&&
+               !Venta_setcuit(auxVenta,cuit))
             {
-                retorno=auxGenerico;
+                retorno=auxVenta;
+
             }
             else
             {
-                Generico_delete(auxGenerico);
+                Venta_delete(auxVenta);
             }
         }
     }
     return retorno;
 }
-void Generico_delete(Generico *auxGenerico)
+void Venta_delete(Venta *auxVenta)
 {
-    if(auxGenerico != NULL)
+    if(auxVenta != NULL)
     {
-        free(auxGenerico);
+        free(auxVenta);
     }
 }
-int Generico_setdato1Str(Generico* this, char *dato1)
+int Venta_setidStr(Venta* this, char *id)
 {
     int retorno = -1;
-    if(this != NULL && dato1 >=0)
+    if(this != NULL && isValidNumber(id))
     {
-        retorno = Generico_setdato1(this, atoi(dato1));
+        retorno = Venta_setid(this, atoi(id));
     }
     return retorno;
 }
-int Generico_setdato1(Generico* this,int dato1)
+int Venta_setid(Venta* this,int id)
 {
     int retorno = -1;
-    if(this != NULL  && dato1 >=0)
+    if(this != NULL  && id >=0)
     {
-        this->dato1 = dato1;
+        this->id = id;
         retorno = 0;
     }
     return retorno;
 }
-int Generico_getdato1(Generico* this,int* dato1)
+int Venta_getid(Venta* this,int* id)
 {
     int retorno = -1;
-    if(this != NULL && dato1 != NULL)
+    if(this != NULL && id != NULL)
     {
-        *dato1 = this->dato1;
+        *id = this->id;
         retorno = 0;
     }
     return retorno;
 }
-int Generico_setdato2(Generico* this,char* dato2)
+
+
+int Venta_settipo(Venta* this,char* tipo)
 {
     int retorno = -1;
-    if(this != NULL && isValidName(dato2))
+    if(this != NULL && isValidAlphanumeric(tipo))
     {
-        strncpy(this->dato2,dato2,sizeof(this->dato2));
+        strncpy(this->tipo,tipo,sizeof(this->tipo));
         retorno = 0;
     }
     return retorno;
 }
-int Generico_getdato2(Generico* this,char* dato2)
+int Venta_gettipo(Venta* this,char* tipo)
 {
     int retorno = -1;
-    if(this != NULL && dato2 != NULL)
+    if(this != NULL && tipo != NULL)
     {
-        strncpy(dato2, this->dato2,sizeof(this->dato2));
+        strncpy(tipo, this->tipo,sizeof(this->tipo));
         retorno = 0;
     }
     return retorno;
 }
-int Generico_setdato3Str(Generico* this, char *dato3)
+
+
+
+int Venta_setfecha(Venta* this,char* fecha)
 {
     int retorno = -1;
-    if(this != NULL && dato3>=0)
+    if(this != NULL/* && isValidFecha(fecha)*/)
     {
-        retorno = Generico_setdato3(this,atoi(dato3));
-    }
-    return retorno;
-}
-int Generico_setdato3(Generico* this,int dato3)
-{
-    int retorno = -1;
-    if(this != NULL && dato3>=0)
-    {
-        this->dato3 = dato3;
+        strncpy(this->fecha,fecha,sizeof(this->fecha));
         retorno = 0;
     }
     return retorno;
 }
-int Generico_getdato3(Generico* this,int* dato3)
+int Venta_getfecha(Venta* this,char* fecha)
 {
     int retorno = -1;
-    if(this != NULL && dato3 != NULL)
+    if(this != NULL && fecha != NULL)
     {
-        *dato3 = this->dato3;
+        strncpy(fecha, this->fecha,sizeof(this->fecha));
         retorno = 0;
     }
     return retorno;
 }
-int Generico_setdato4Str(Generico* this, char *dato4)
+
+
+
+int Venta_setcuit(Venta* this,char* cuit)
 {
     int retorno = -1;
-    if(this != NULL && dato4 >=0)
+    if(this != NULL && isValidCUIT(cuit))
     {
-        retorno = Generico_setdato4(this,atof(dato4));
-    }
-    return retorno;
-}
-int Generico_setdato4(Generico* this,float dato4)
-{
-    int retorno = -1;
-    if(this != NULL && dato4 >=0)
-    {
-        this->dato4 = dato4;
+        strncpy(this->cuit,cuit,sizeof(this->cuit));
         retorno = 0;
     }
     return retorno;
 }
-int Generico_getdato4(Generico* this,float* dato4)
+int Venta_getcuit(Venta* this,char* cuit)
 {
     int retorno = -1;
-    if(this != NULL && dato4 != NULL)
+    if(this != NULL && cuit != NULL)
     {
-        *dato4 = this->dato4;
+        strncpy(cuit, this->cuit,sizeof(this->cuit));
         retorno = 0;
     }
     return retorno;
 }
-int Generico_compararPorNombre(void *this1,void *this2)
+
+
+
+int Venta_setcantidadStr(Venta* this, char *cantidad)
 {
-    char auxStrA[4096];
-    char auxStrB[4096];
-    int retorno;
-    Generico_getdato2((Generico*)this1, auxStrA);
-    Generico_getdato2((Generico*)this2, auxStrB);
-    if(strcmp(auxStrA,auxStrB)>0)
+    int retorno = -1;
+    if(this != NULL/* && isValidNumber(cantidad)*/)
     {
-      retorno=1;
+        retorno = Venta_setcantidad(this,atoi(cantidad));
     }
-    else if(strcmp(auxStrA,auxStrB)<0)
-    {
-      retorno=-1;
-    }
-      return retorno;
+    return retorno;
 }
-int Generico_filtrarGold(void* this)
+int Venta_setcantidad(Venta* this,int cantidad)
+{
+    int retorno = -1;
+    if(this != NULL && cantidad>=0)
+    {
+        this->cantidad = cantidad;
+        retorno = 0;
+    }
+    return retorno;
+}
+int Venta_getcantidad(Venta* this,int* cantidad)
+{
+    int retorno = -1;
+    if(this != NULL && cantidad != NULL)
+    {
+        *cantidad = this->cantidad;
+        retorno = 0;
+    }
+    return retorno;
+}
+
+
+
+int Venta_setprecioStr(Venta* this, char *precio)
+{
+    int retorno = -1;
+    if(this != NULL && isValidFloatNumber(precio))
+    {
+        retorno = Venta_setprecio(this,atof(precio));
+    }
+    return retorno;
+}
+int Venta_setprecio(Venta* this,float precio)
+{
+    int retorno = -1;
+    if(this != NULL && precio >=0)
+    {
+        this->precio = precio;
+        retorno = 0;
+    }
+    return retorno;
+}
+int Venta_getprecio(Venta* this,float* precio)
+{
+    int retorno = -1;
+    if(this != NULL && precio != NULL)
+    {
+        *precio = this->precio;
+        retorno = 0;
+    }
+    return retorno;
+}
+
+
+
+
+
+int Venta_mayor150(void* this)
 {
     int retorno = 0;
-    char auxTipo[4096];
-
+    float auxTipo;
+    int otro;
     if(this != NULL)
     {
-        Generico_getdato2(((Generico*)this),auxTipo);
-        if(!strcmp("GOLD", auxTipo))
+        Venta_getprecio(((Venta*)this),&auxTipo);
+        if(auxTipo>150)
         {
+        for(i=0; i<length; i++)
+        {
+            pAux = ll_get(pLista, i);
+            if(!Venta_getprecio(pAux, &auxTipo))
+            {
+                contadorCantidad += cantidadActual;
+            }
+        }
+            otro+=auxTipo;
             retorno = 1;
+            printf("%f",otro);
         }
     }
     return retorno;
 }
 
 
-int Generico_filtrarPlus(void* this)
+int Venta_filtrarPolaroid(void* this)
 {
    int retorno = 0;
     char auxTipo[4096];
+    int cont=0;
 
     if(this != NULL)
     {
-        Generico_getdato2(((Generico*)this),auxTipo);
-        if(!strcmp("PLUS", auxTipo))
+        Venta_gettipo(((Venta*)this),auxTipo);
+        if(!strcmp("POLAROID_11x9", auxTipo) || !strcmp("POLAROID_10x10", auxTipo))
         {
             retorno = 1;
         }
@@ -196,18 +252,3 @@ int Generico_filtrarPlus(void* this)
     return retorno;
 }
 
-int Generico_filtrarRegular(void* this)
-{
-    int retorno = 0;
-    char auxTipo[4096];
-
-    if(this != NULL)
-    {
-        Generico_getdato2(((Generico*)this),auxTipo);
-        if(!strcmp("REGULAR", auxTipo))
-        {
-            retorno = 1;
-        }
-    }
-    return retorno;
-}

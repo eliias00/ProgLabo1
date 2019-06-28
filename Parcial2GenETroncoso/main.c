@@ -11,7 +11,7 @@ int main()
 
     if(!controller_loadFromText("data.csv", lista))
     {
-        controller_saveAsText("atr.txt", lista);
+       controller_saveAsText("informes.txt", lista);
     }
     return 0;
 }
