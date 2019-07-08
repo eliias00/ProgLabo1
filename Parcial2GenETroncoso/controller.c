@@ -27,34 +27,6 @@ int controller_cantidadVentas(LinkedList* pLista)
 
     return contadorCantidad;
 }
-
-
-int controller_importeVentado(LinkedList* pLista)
-{
-    Venta* pAux;
-    int length;
-    float contadorImporte = 0;
-    float importeActual;
-    int count;
-    int i;
-
-    count=ll_count(pLista,Venta_mayor150);
-    printf("%d",count);
-   /* if(pLista != NULL)
-    {
-        length = ll_len(pLista);
-        for(i=0; i<length; i++)
-        {
-            pAux = ll_get(pLista, i);
-            if(!Venta_getdato4(pAux, &importeActual))
-            {
-                contadorImporte += importeActual;
-            }
-        }
-    }*/
-    return count;
-}
-
 int controller_loadFromText(char* path, LinkedList* pLista)
 {
     int retorno = -1;
@@ -77,12 +49,10 @@ int controller_loadFromText(char* path, LinkedList* pLista)
 int controller_saveAsText(char* path, LinkedList* registro)
 {
     int retorno = -1;
-    int cantidadDeVentas;
     int cantidadFotosRe = 0;
     int totalPola;
-    int total;
-    LinkedList *lista = ll_newLinkedList;
-    Venta *Ventas;
+    int total=0;
+    int total2=0;
     FILE *pFile = NULL;
 
     if(path != NULL && registro != NULL)
@@ -91,19 +61,18 @@ int controller_saveAsText(char* path, LinkedList* registro)
         if(pFile != NULL)
         {
 
-            total = ll_len(lista);
-
             total = ll_count(registro, Venta_mayor150);
-
-            totalPola = ll_count(registro, Venta_filtrarPolaroid);
+            total2 = ll_count(registro, Venta_mayor300);
             cantidadFotosRe = controller_cantidadVentas(registro);
-
-            controller_importeVentado(registro);
-
+            totalPola = ll_count(registro, Venta_filtrarPolaroid);
+            printf("\n%d",cantidadFotosRe);
+            printf("\n%d",total);
+            printf("\n%d",total2);
+            printf("\n%d",totalPola);
             fprintf(pFile, "*****************************\nInforme de Ventas\n*****************************\n");
             fprintf(pFile, "- Cantidad de fotos reveladas: %d\n", cantidadFotosRe);
-//            fprintf(pFile, "- Cantidad de Ventas por un monto mayor a $150: %d \n", );
-      //      fprintf(pFile, "- Cantidad de Ventas por un monto mayor a $300: %d\n", );
+            fprintf(pFile, "- Cantidad de Ventas por un monto mayor a $150: %d \n",total );
+            fprintf(pFile, "- Cantidad de Ventas por un monto mayor a $300: %d\n", total2 );
             fprintf(pFile, "- Cantidad de fotos polaroids reveladas: %d\n", totalPola);
             fprintf(pFile, "*******************************************************************************");
 

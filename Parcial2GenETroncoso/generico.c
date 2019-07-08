@@ -99,7 +99,7 @@ int Venta_gettipo(Venta* this,char* tipo)
 int Venta_setfecha(Venta* this,char* fecha)
 {
     int retorno = -1;
-    if(this != NULL/* && isValidFecha(fecha)*/)
+    if(this != NULL && isValidFecha(fecha))
     {
         strncpy(this->fecha,fecha,sizeof(this->fecha));
         retorno = 0;
@@ -122,7 +122,7 @@ int Venta_getfecha(Venta* this,char* fecha)
 int Venta_setcuit(Venta* this,char* cuit)
 {
     int retorno = -1;
-    if(this != NULL && isValidCUIT(cuit))
+    if(this != NULL && isCuit(cuit))
     {
         strncpy(this->cuit,cuit,sizeof(this->cuit));
         retorno = 0;
@@ -145,7 +145,7 @@ int Venta_getcuit(Venta* this,char* cuit)
 int Venta_setcantidadStr(Venta* this, char *cantidad)
 {
     int retorno = -1;
-    if(this != NULL/* && isValidNumber(cantidad)*/)
+    if(this != NULL && isValidNumber(cantidad))
     {
         retorno = Venta_setcantidad(this,atoi(cantidad));
     }
@@ -210,37 +210,51 @@ int Venta_getprecio(Venta* this,float* precio)
 
 int Venta_mayor150(void* this)
 {
-    int retorno = 0;
-    float auxTipo;
-    int otro;
-    if(this != NULL)
+    int retorno=0;
+    float auxImporte;
+    int cantidad;
+    float total;
+
+    if (this!=NULL)
     {
-        Venta_getprecio(((Venta*)this),&auxTipo);
-        if(auxTipo>150)
+        Venta_getprecio(this,&auxImporte);
+        Venta_getcantidad(this,&cantidad);
+        total= auxImporte*cantidad;
+        if (total>150)
         {
-        for(i=0; i<length; i++)
-        {
-            pAux = ll_get(pLista, i);
-            if(!Venta_getprecio(pAux, &auxTipo))
-            {
-                contadorCantidad += cantidadActual;
-            }
-        }
-            otro+=auxTipo;
-            retorno = 1;
-            printf("%f",otro);
+
+            retorno=1;
         }
     }
+
+    return retorno;
+}
+int Venta_mayor300(void* this)
+{
+    int retorno=0;
+    float auxImporte;
+    int cantidad;
+    float total;
+
+    if (this!=NULL)
+    {
+        Venta_getprecio(this,&auxImporte);
+        Venta_getcantidad(this,&cantidad);
+        total= auxImporte*cantidad;
+        if (total>300)
+        {
+
+            retorno=1;
+        }
+    }
+
     return retorno;
 }
 
-
 int Venta_filtrarPolaroid(void* this)
 {
-   int retorno = 0;
+    int retorno = 0;
     char auxTipo[4096];
-    int cont=0;
-
     if(this != NULL)
     {
         Venta_gettipo(((Venta*)this),auxTipo);

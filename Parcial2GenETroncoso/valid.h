@@ -19,7 +19,7 @@ int utn_getDNI(char* msg, char* msgError, int minSize, int maxSize, int reintent
 int isValidDNI(char* stringRecibido);
 
 int utn_getCUIT(char* msg, char* msgError, int reintentos, char* input);
-int isValidCUIT(char* stringRecibido);
+int isCuit (char* pString);
 
 int utn_getEmail(char* msg, char* msgError, int minSize, int maxSize, int reintentos, char* input);
 int isValidEmail(char* stringRecibido);
@@ -32,3 +32,4 @@ int isValidAlphanumeric(char* stringRecibido);
 
 int utn_getChar(char* msg, char* msgError, int min, int max, int reintentos, char* resultado);
 int isValidChar(char charRecibido);
+int isValidFecha(char* stringRecibido);
