@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1555462580 source:/home/alumno/ProgLaboMauricio1/CLASE_08/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1555461557 /home/alumno/ProgLaboMauricio1/CLASE_08/utn.h
+
+1555462620 source:/home/alumno/ProgLaboMauricio1/CLASE_08/utn.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
+1555786731 source:/home/elias/Escritorio/ProgLaboMauricio1/CLASE_08/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"validaciones.h"
+
+1555786147 /home/elias/Escritorio/ProgLaboMauricio1/CLASE_08/utn.h
+
+1555787100 source:/home/elias/Escritorio/ProgLaboMauricio1/CLASE_08/utn.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"validaciones.h"
+
+1555784191 /home/elias/Escritorio/ProgLaboMauricio1/CLASE_08/validaciones.h
+
+1555784983 source:/home/elias/Escritorio/ProgLaboMauricio1/CLASE_08/validaciones.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"validaciones.h"
+
