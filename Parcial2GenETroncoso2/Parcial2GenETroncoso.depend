@@ -321,3 +321,57 @@
 	<string.h>
 	"valid.h"
 
+1563485032 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1563485032 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/LinkedList.h
+
+1563492970 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1563493395 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/controller.h
+	"generico.h"
+
+1563491759 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/generico.h
+
+1563485032 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/valid.h
+
+1563489493 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1563485305 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/valid.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	"valid.h"
+
+1563494021 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1563485032 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/parser.h
+
+1563493022 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+

@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//#include <stdio_ext.h>
+#include <stdio_ext.h>
 #include <string.h>
 #include "valid.h"
 /*
@@ -36,11 +36,9 @@ int getString(char* msg, char* msgError, int min, int max, int* reintentos, char
         {
             printf("%s",msg);   //no poner salto de linea, se va a pasar en el mensaje por valor
             //fflush(stdin);
-          /*  __fpurge(stdin);
+            __fpurge(stdin);
             fgets(bufferStr,sizeof(bufferStr),stdin);
-            bufferStr[strlen(bufferStr)-1]='\0';*/
-            scanf("%s",& bufferStr);
-
+            bufferStr[strlen(bufferStr)-1]='\0';
             if(strlen(bufferStr)>=min && strlen(bufferStr)<max)    // tamaño (max) =cantidad de elementos (strlen) + 1(\0)
             {
                 strncpy(resultado,bufferStr,max);

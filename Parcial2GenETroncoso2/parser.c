@@ -8,22 +8,22 @@ int parserFromText(FILE* pFile , LinkedList* pLista)
 {
     int retorno = -1;
     int flag=0;
-    char idLlamada[4096];
-    char fecha[4096];
-    char numCliente[4096];
-    char idProblema[4096];
-    char solucionado[4096];
+    char idEnvio[4096];
+    char nombrePro[4096];
+    char km[4096];
+    char tipoEnt[4096];
 
-    Llamada* pGen;
+
+    Envio* pGen;
     while(!feof(pFile))
     {
-        fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", idLlamada, fecha, numCliente,idProblema,solucionado);
+        fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", idEnvio, nombrePro,km,tipoEnt);
         if(flag == 0)
         {
             flag++;
             continue;
         }
-        pGen = Llamada_newParametros(idLlamada, fecha, numCliente,idProblema,solucionado);
+        pGen = Envio_newParametros(idEnvio, nombrePro, km,tipoEnt);
 
         if(pGen != NULL)
         {

@@ -9,10 +9,14 @@ int main()
 {
     LinkedList* lista = ll_newLinkedList();
     int option;
+    char nombre[128];
 
-    do{
+  /*  printf("ingrese nombre de archivo: ");
+    scanf("%s",nombre);*/
+    do
+    {
         printf("\n1. Cargar archivo");
-        printf("\n2. imprimir llamada");
+        printf("\n2. imprimir envios");
         printf("\n3. generar archivo");
         printf("\n4. salir");
 
@@ -22,29 +26,30 @@ int main()
         system("clear");
         switch(option)
         {
-            case 1:
-                controller_loadFromText("data.csv",lista);
-                printf("se ha cargado data.csv(txt)\n");
+        case 1:
+            controller_loadFromText("data.csv",lista);
+            printf("se ha cargado data.csv(txt)\n");
 
-                break;
-            case 2:
-             imprimirLlamada(lista);
-                break;
-            case 3:
-                if(!controller_saveAsText("salida.csv",lista))
-                {
-                 printf("se ha generado salida.csv(txt)\n");
-                }
-                else
-                {
-                    printf("nose pudo generar la salida.csv(txt)");
-                }
-                break;
-            case 4:
+            break;
+          case 2:
+                  imprimirTipo(lista);
+              break;
+         case 3:
+              if(!controller_saveAsText("salida.csv",lista))
+              {
+               printf("se ha generado salida.csv(txt)\n");
+              }
+              else
+              {
+                  printf("nose pudo generar la salida.csv(txt)");
+              }
+              break;
+        case 4:
 
-                break;
+            break;
 
-                }
-    }while(option != 4);
+        }
+    }
+    while(option != 4);
     return 0;
 }

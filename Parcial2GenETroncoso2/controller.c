@@ -26,76 +26,111 @@ int controller_loadFromText(char* path, LinkedList* pLista)
     return retorno;
 }
 
-int controller_saveAsText(char* path, LinkedList* registro)
+int controller_saveAsText(char* path, LinkedList* pArrayListEnvio)
 {
     int retorno = -1;
-    int numero;
-    FILE *pFile = NULL;
-    LinkedList* registroNuevo = ll_newLinkedList();
+    Envio* auxEnvio;
+    FILE* pFile;
     int i;
-    char solu[4096];
-    int idp;
-    char fecha[4096];
-    int idl;
-    int numCli;
-    Llamada* pAux;
-    if(path != NULL && registro != NULL)
+    int id;
+    char nombre[40961];
+    int kilometros;
+    int tipoDeEntrega;
+    float precio;
+    float costo;
+
+    if(path != NULL && pArrayListEnvio != NULL)
     {
-        pFile = fopen(path, "w");
+        pFile = fopen(path,"w");
         if(pFile != NULL)
         {
+            costo=ll_map(pArrayListEnvio,costoTipoEntrega);
 
-            printf("ingrese id del problema: ");
-            scanf("%d",&numero);
-            switch(numero)
+            for(i=0; i<ll_len(pArrayListEnvio); i++)
             {
-            case 1:
-                registroNuevo=ll_filter(registro,filtro1);
-                break;
-            case 2:
-                registroNuevo=ll_filter(registro,filtro2);
-                break;
-            case 3:
-                registroNuevo=ll_filter(registro,filtro3);
-                break;
-            case 4:
-                registroNuevo=ll_filter(registro,filtro4);
-                break;
-            case 5:
-                registroNuevo=ll_filter(registro,filtro5);
-                break;
-                default:
-                printf("no existe ese id");
-                retorno=-1;
-            }
-
-            for(i=0; i<ll_len(registroNuevo); i++)
-            {
-                pAux = ll_get(registroNuevo, i);
-
-                if(!Llamada_getsol(pAux,solu)&&
-                        !Llamada_getidP(pAux,&idp)&&
-                        !Llamada_getfecha(pAux,fecha)&&
-                        !Llamada_getid(pAux,&idl)&&
-                        !Llamada_getnumCliente(pAux,&numCli))
+                auxEnvio = ll_get(pArrayListEnvio,i);
+                if(auxEnvio != NULL)
                 {
-                    fprintf(pFile,"%d,%s,%d,%d,%s\n",idl,fecha,numCli,idp,solu);
-                    retorno = 0;
+                    Envio_getid(auxEnvio, &id);
+                    Envio_getNombre(auxEnvio,nombre);
+                    Envio_getkm(auxEnvio,&kilometros);
+                    Envio_gettipo(auxEnvio, &tipoDeEntrega);
+
+                    fprintf(pFile,"%d,%s,%d,%d,%f\n",id,nombre,kilometros,tipoDeEntrega,costo);
                 }
             }
+            retorno = 0;
+            fclose(pFile);
         }
-        fclose(pFile);
+
     }
+
     return retorno;
 }
-int imprimirLlamada(LinkedList *lista)
+
+
+int costoTipoEntrega(void* p)
 {
-    Llamada* pAux;
-    char solu[4096];
-    int idp;
-    char fecha[4096];
-    int idl;
-    int numCli;
+    int tipo;
+    int costo;
+    float precio;
+    if(p!=NULL)
+    {
+        precio=aumentoPorKilometros(p);
+
+        Envio_gettipo((Envio*)p,&tipo);
+
+        if(tipo==1)
+        {
+            precio=precio+330;
+        }
+        else if(tipo==2)
+        {
+            precio=precio+ 560;
+
+        }
+        else if(tipo==3)
+        {
+            precio=precio+80;
+
+        }
+    }
+
+    return precio;
+}
+int aumentoPorKilometros(void* p)
+{
+    float precio=0;
+    float *retorno;
+    int kilometros;
+    if(p!=NULL)
+    {
+
+        Envio_getkm(p,&kilometros);
+        if(kilometros<50)
+        {
+            precio=67;
+            precio=precio*kilometros;
+        }
+        else
+        {
+            precio = 80;
+            precio=precio*kilometros;
+        }
+            *retorno=precio;
+    }
+
+    return retorno;
+}
+int imprimirTipo(LinkedList *lista)
+{
+    Envio* pAux;
+
+    int idEnvio;
+    char nombrePro[4096];
+    float km;
+    int tipoEnt;
+
     int i;
 
     if(lista != NULL)
@@ -104,112 +139,27 @@ int imprimirLlamada(LinkedList *lista)
         {
             pAux = ll_get(lista, i);
 
-            if(!Llamada_getsol(pAux,solu)&&
-                    !Llamada_getidP(pAux,&idp)&&
-                    !Llamada_getfecha(pAux,fecha)&&
-                    !Llamada_getid(pAux,&idl)&&
-                    !Llamada_getnumCliente(pAux,&numCli))
+            Envio_getid(pAux,&idEnvio);
+            Envio_getkm(pAux,&km);
+            Envio_gettipo(pAux,&tipoEnt);
+            Envio_getNombre(pAux,nombrePro);
             {
-                if(idp==1)
+
+                if(tipoEnt==1)
                 {
-                    printf("%d,%s,%d,no enciende pc,%s\n",idl,fecha,numCli,solu);
+                    printf("%d,%s,%f,normal\n",idEnvio,nombrePro,km);
                 }
-                else if(idp==2)
+                else if(tipoEnt==2)
                 {
-                    printf("%d,%s,%d,no funciona mouse,%s\n",idl,fecha,numCli,solu);
+                    printf("%d,%s,%f,express\n",idEnvio,nombrePro,km);
                 }
-                else if(idp==3)
+                else if(tipoEnt==3)
                 {
-                    printf("%d,%s,%d,no funciona teclado,%s\n",idl,fecha,numCli,solu);
-                }
-                else if(idp==4)
-                {
-                    printf("%d,%s,%d,no hay internet,%s\n",idl,fecha,numCli,solu);
-                }
-                else if(idp==5)
-                {
-                    printf("%d,%s,%d,no funciona telefono,%s\n",idl,fecha,numCli,solu);
+                    printf("%d,%s,%f,segun disponibilidad\n",idEnvio,nombrePro,km);
                 }
 
             }
         }
     }
     return 0;
-
-
-}
-int filtro1(void* this)
-{
-    int ret = 0 ;
-    int auxProblema;
-
-    if (this!= NULL )
-    {
-        Llamada_getidP ((Llamada *) this, & auxProblema);
-        if (auxProblema == 1 )
-        {
-            ret = 1 ;
-        }
-    }
-    return ret;
-}
-int filtro2(void* this)
-{
-    int ret = 0 ;
-    int auxProblema;
-
-    if (this!= NULL )
-    {
-        Llamada_getidP ((Llamada *) this, & auxProblema);
-        if (auxProblema == 2 )
-        {
-            ret = 1 ;
-        }
-    }
-    return ret;
-}
-int filtro3(void* this)
-{
-    int ret = 0 ;
-    int auxProblema;
-
-    if (this!= NULL )
-    {
-        Llamada_getidP ((Llamada *) this, & auxProblema);
-        if (auxProblema == 3 )
-        {
-            ret = 1 ;
-        }
-    }
-    return ret;
-}
-int filtro4(void* this)
-{
-    int ret = 0 ;
-    int auxProblema;
-
-    if (this!= NULL )
-    {
-        Llamada_getidP ((Llamada *) this, & auxProblema);
-        if (auxProblema == 4 )
-        {
-            ret = 1 ;
-        }
-    }
-    return ret;
-}
-int filtro5(void* this)
-{
-    int ret = 0 ;
-    int auxProblema;
-
-    if (this!= NULL )
-    {
-        Llamada_getidP ((Llamada *) this, & auxProblema);
-        if (auxProblema == 5 )
-        {
-            ret = 1 ;
-        }
-    }
-    return ret;
 }
