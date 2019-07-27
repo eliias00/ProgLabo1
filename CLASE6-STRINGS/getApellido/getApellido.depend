@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1555174078 source:/home/elias/Escritorio/ProgLaboMauricio1/stringsClase6/getApellido/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"apellido.h"
+
+1555173829 /home/elias/Escritorio/ProgLaboMauricio1/stringsClase6/getApellido/apellido.h
+
+1555173977 source:/home/elias/Escritorio/ProgLaboMauricio1/stringsClase6/getApellido/apellido.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

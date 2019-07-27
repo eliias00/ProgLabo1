@@ -1,0 +1,419 @@
+# depslib dependency file v1.0
+1561605085 source:/home/elias/Escritorio/Parcial2GenETroncoso/controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1561600403 /home/elias/Escritorio/Parcial2GenETroncoso/LinkedList.h
+
+1561603658 /home/elias/Escritorio/Parcial2GenETroncoso/generico.h
+
+1561605038 /home/elias/Escritorio/Parcial2GenETroncoso/parser.h
+
+1561600400 /home/elias/Escritorio/Parcial2GenETroncoso/valid.h
+
+1561603821 source:/home/elias/Escritorio/Parcial2GenETroncoso/generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1561602559 source:/home/elias/Escritorio/Parcial2GenETroncoso/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561603328 source:/home/elias/Escritorio/Parcial2GenETroncoso/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1561604809 /home/elias/Escritorio/Parcial2GenETroncoso/controller.h
+	"generico.h"
+
+1561605085 source:/home/elias/Escritorio/Parcial2GenETroncoso/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1561601064 source:/home/elias/Escritorio/Parcial2GenETroncoso/valid.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	"valid.h"
+
+1561682809 source:/home/alumno/Escritorio/Parcial2GenETroncoso/controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1561668202 /home/alumno/Escritorio/Parcial2GenETroncoso/LinkedList.h
+
+1561679732 /home/alumno/Escritorio/Parcial2GenETroncoso/generico.h
+
+1561668202 /home/alumno/Escritorio/Parcial2GenETroncoso/parser.h
+
+1561672504 /home/alumno/Escritorio/Parcial2GenETroncoso/valid.h
+
+1561674814 /home/alumno/Escritorio/Parcial2GenETroncoso/controller.h
+	"generico.h"
+
+1561668202 source:/home/alumno/Escritorio/Parcial2GenETroncoso/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1561674618 source:/home/alumno/Escritorio/Parcial2GenETroncoso/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1561679033 source:/home/alumno/Escritorio/Parcial2GenETroncoso/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1561681946 source:/home/alumno/Escritorio/Parcial2GenETroncoso/generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1561676497 source:/home/alumno/Escritorio/Parcial2GenETroncoso/valid.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	"valid.h"
+
+1562602637 source:/home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562601137 /home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/LinkedList.h
+
+1562601137 source:/home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1562605648 /home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/controller.h
+	"generico.h"
+
+1562605452 /home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/generico.h
+
+1562605411 /home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/valid.h
+
+1562601137 source:/home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1562604248 source:/home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/valid.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	"valid.h"
+
+1562604800 source:/home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1562601137 /home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/parser.h
+
+1562605479 source:/home/elias/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso/generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1562888675 source:/home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1562609062 /home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/LinkedList.h
+
+1562886924 /home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/generico.h
+
+1562609062 /home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/parser.h
+
+1562609062 /home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/valid.h
+
+1562888637 /home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/controller.h
+	"generico.h"
+
+1562609062 source:/home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1562609062 source:/home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/valid.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	"valid.h"
+
+1562883093 source:/home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1562884954 source:/home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1562885933 source:/home/alumno/Descargas/ProgLaboMauricio1-master/Parcial2GenETroncoso/generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1563239181 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1563236257 c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\linkedlist.h
+
+1563239129 c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\generico.h
+
+1563236257 c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\parser.h
+
+1563236257 c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\valid.h
+
+1563239254 c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\controller.h
+	"generico.h"
+
+1563239346 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1563236257 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1563236257 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1563236257 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1563236673 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\proglabomauricio1-master\parcial2genetroncoso\valid.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"valid.h"
+
+1564190648 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1564182642 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\linkedlist.h
+
+1564257584 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\generico.h
+
+1564182643 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\parser.h
+
+1564182643 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\valid.h
+
+1564190364 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\controller.h
+	"generico.h"
+
+1564257584 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1564257996 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1564257673 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1564182643 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1564182821 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso2\valid.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"valid.h"
+
+1563485032 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1563485032 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/LinkedList.h
+
+1563492970 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1563493395 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/controller.h
+	"generico.h"
+
+1563491759 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/generico.h
+
+1563485032 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/valid.h
+
+1563489493 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1563485305 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/valid.c
+	<stdio.h>
+	<stdlib.h>
+	<stdio_ext.h>
+	<string.h>
+	"valid.h"
+
+1563494021 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+	"parser.h"
+	"valid.h"
+	"controller.h"
+
+1563485032 /home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/parser.h
+
+1563493022 source:/home/alumno/Escritorio/ProgLaboMauricio1/Parcial2GenETroncoso2/generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1564257584 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\generico.c
+	<stdio.h>
+	<stdlib.h>
+	"generico.h"
+	"valid.h"
+	<string.h>
+
+1564257584 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\generico.h
+
+1564182643 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\valid.h
+
+1564257996 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1564182642 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\linkedlist.h
+
+1564260988 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"controller.h"
+	"generico.h"
+	"valid.h"
+
+1564190364 c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\controller.h
+	"generico.h"
+
+1564182643 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"generico.h"
+
+1564182821 source:c:\users\elias\onedrive\escritorio\proglabomauricio1\parcial2genetroncoso3 no terminado\valid.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"valid.h"
+

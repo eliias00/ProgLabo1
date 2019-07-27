@@ -4,72 +4,69 @@
 #include "valid.h"
 #include <string.h>
 
-Envio* Envio_new()
+Llamada* Llamada_new()
 {
-    return (Envio*) malloc(sizeof(Envio));
+    return (Llamada*) malloc(sizeof(Llamada));
 }
-Envio* Envio_newParametros(char *idEnvio, char *nombrePro, char *km,char *tipoEnt)
+Llamada* Llamada_newParametros(char *idLlamada, char *fecha, char *numCliente,char *idProblema,char *solucionado)
 {
-    Envio *retorno = NULL;
-    Envio *auxEnvio;
-    if(idEnvio != NULL && nombrePro!=NULL && km!=NULL && tipoEnt!=NULL)
+    Llamada *retorno = NULL;
+    Llamada *auxLlamada;
+    if(idLlamada != NULL && fecha!=NULL && numCliente!=NULL && idProblema!=NULL && solucionado!=NULL)
     {
-        auxEnvio=Envio_new();
-        if(auxEnvio!=NULL)
+        auxLlamada=Llamada_new();
+        if(auxLlamada!=NULL)
         {
-            if(!Envio_setidStr(auxEnvio,idEnvio)&&
-               !Envio_setNombre(auxEnvio,nombrePro)&&
-               !Envio_setkmStr(auxEnvio,km)&&
-               !Envio_setTipoStr(auxEnvio,tipoEnt))
+            if(!Llamada_setNumClienteStr(auxLlamada,numCliente)&&
+               !Llamada_setidStrL(auxLlamada,idLlamada)&&
+               !Llamada_setSol(auxLlamada,solucionado)&&
+               !Llamada_setfecha(auxLlamada,fecha)&&
+               !Llamada_setidStrP(auxLlamada,idProblema))
             {
-                retorno=auxEnvio;
+                retorno=auxLlamada;
+
+
             }
             else
             {
-                Envio_delete(auxEnvio);
+                Llamada_delete(auxLlamada);
             }
         }
     }
     return retorno;
 }
-void Envio_delete(Envio *auxEnvio)
+void Llamada_delete(Llamada *auxLlamada)
 {
-    if(auxEnvio != NULL)
+    if(auxLlamada != NULL)
     {
-        free(auxEnvio);
+        free(auxLlamada);
     }
 }
-
-
-
-int Envio_setidStr(Envio* this, char *idEnvio)
+int Llamada_setidStrL(Llamada* this, char *id)
 {
     int retorno = -1;
-    if(this != NULL && isValidNumber(idEnvio))
+    if(this != NULL && isValidNumber(id))
     {
-        retorno = Envio_setid(this, atoi(idEnvio));
+        retorno = Llamada_setidL(this, atoi(id));
     }
     return retorno;
 }
-int Envio_setid(Envio* this,int idEnvio)
+int Llamada_setidL(Llamada* this,int id)
 {
     int retorno = -1;
-    if(this != NULL  && idEnvio >=0)
+    if(this != NULL  && id >=0)
     {
-        this->idEnvio = idEnvio;
+        this->idLlamada = id;
         retorno = 0;
     }
     return retorno;
 }
-
-int Envio_getid(Envio* this,int* idEnvio)
+int Llamada_getid(Llamada* this,int* id)
 {
     int retorno = -1;
-    if(this != NULL && idEnvio != NULL)
+    if(this != NULL && id != NULL)
     {
-
-        *idEnvio = this->idEnvio;
-
+        *id = this->idLlamada;
         retorno = 0;
     }
     return retorno;
@@ -77,63 +74,31 @@ int Envio_getid(Envio* this,int* idEnvio)
 
 
 
-int Envio_setkmStr(Envio* this, char *km)
+int Llamada_setNumClienteStr(Llamada* this, char *numCliente)
 {
     int retorno = -1;
-    if(this != NULL && isValidFloatNumber(km))
+    if(this != NULL && isValidNumber(numCliente))
     {
-        retorno = Envio_setkm(this,atof(km));
+        retorno = Llamada_setnumCliente(this, atoi(numCliente));
     }
     return retorno;
 }
-
-int Envio_setkm(Envio* this,float km)
+int Llamada_setnumCliente(Llamada* this,int numCliente)
 {
     int retorno = -1;
-    if(this != NULL && km >=0)
+    if(this != NULL  && numCliente >=0)
     {
-        this->km = km;
+        this->numCliente = numCliente;
         retorno = 0;
     }
     return retorno;
 }
-int Envio_getkm(Envio* this,float* km)
+int Llamada_getnumCliente(Llamada* this,int* numCliente)
 {
     int retorno = -1;
-    if(this != NULL && km != NULL)
+    if(this != NULL && numCliente != NULL)
     {
-        *km = this->km;
-        retorno = 0;
-    }
-    return retorno;
-}
-
-
-int Envio_setTipoStr(Envio* this, char *tipoEnt)
-{
-    int retorno = -1;
-    if(this != NULL && isValidNumber(tipoEnt))
-    {
-        retorno = Envio_settipo(this, atoi(tipoEnt));
-    }
-    return retorno;
-}
-int Envio_settipo(Envio* this,int tipoEnt)
-{
-    int retorno = -1;
-    if(this != NULL  && tipoEnt >=0)
-    {
-        this->tipoEnt = tipoEnt;
-        retorno = 0;
-    }
-    return retorno;
-}
-int Envio_gettipo(Envio* this,int* tipoEnt)
-{
-    int retorno = -1;
-    if(this != NULL && tipoEnt != NULL)
-    {
-        *tipoEnt = this->tipoEnt;
+        *numCliente = this->numCliente;
         retorno = 0;
     }
     return retorno;
@@ -142,24 +107,79 @@ int Envio_gettipo(Envio* this,int* tipoEnt)
 
 
 
-int Envio_setNombre(Envio* this,char* nombrePro)
+
+int Llamada_setfecha(Llamada* this,char* fecha)
 {
     int retorno = -1;
-    if(this != NULL && isValidAlphanumeric(nombrePro))
+    if(this != NULL && isValidFecha(fecha))
     {
-        strncpy(this->nombrePro,nombrePro,sizeof(this->nombrePro));
+        strncpy(this->fecha,fecha,sizeof(this->fecha));
+        retorno = 0;
+    }
+    return retorno;
+}
+int Llamada_getfecha(Llamada* this,char* fecha)
+{
+    int retorno = -1;
+    if(this != NULL && fecha != NULL)
+    {
+        strncpy(fecha, this->fecha,sizeof(this->fecha));
         retorno = 0;
     }
     return retorno;
 }
 
-int Envio_getNombre(Envio* this,char* nombrePro)
+
+int Llamada_setidStrP(Llamada* this, char *id)
 {
     int retorno = -1;
-    if(this != NULL && nombrePro != NULL)
+    if(this != NULL && isValidNumber(id))
     {
-        strncpy(nombrePro, this->nombrePro,sizeof(this->nombrePro));
-        retorno = nombrePro;
+        retorno = Llamada_setid(this, atoi(id));
+    }
+    return retorno;
+}
+int Llamada_setid(Llamada* this,int id)
+{
+    int retorno = -1;
+    if(this != NULL  && id >=0)
+    {
+        this->idProblema = id;
+        retorno = 0;
+    }
+    return retorno;
+}
+int Llamada_getidP(Llamada* this,int* id)
+{
+    int retorno = -1;
+    if(this != NULL && id != NULL)
+    {
+        *id = this->idProblema;
+        retorno = 0;
+    }
+    return retorno;
+}
+
+
+
+
+int Llamada_setSol(Llamada* this,char* sol)
+{
+    int retorno = -1;
+    if(this != NULL && isValidName(sol))
+    {
+        strncpy(this->solucionado,sol,sizeof(this->solucionado));
+        retorno = 0;
+    }
+    return retorno;
+}
+int Llamada_getsol(Llamada* this,char* sol)
+{
+    int retorno = -1;
+    if(this != NULL && sol != NULL)
+    {
+        strncpy(sol, this->solucionado,sizeof(this->solucionado));
+        retorno = 0;
     }
     return retorno;
 }
