@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1563491140 source:/home/alumno/zanoni/tp_laboratorio_1/envios/Controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"envios.h"
+	"parser.h"
+	"validaciones.h"
+
+1563485051 /home/alumno/zanoni/tp_laboratorio_1/envios/LinkedList.h
+
+1563490269 /home/alumno/zanoni/tp_laboratorio_1/envios/envios.h
+
+1563487591 /home/alumno/zanoni/tp_laboratorio_1/envios/parser.h
+
+1563485051 /home/alumno/zanoni/tp_laboratorio_1/envios/validaciones.h
+
+1563490269 source:/home/alumno/zanoni/tp_laboratorio_1/envios/envios.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"envios.h"
+	"validaciones.h"
+	"funciones.h"
+
+1563485051 /home/alumno/zanoni/tp_laboratorio_1/envios/funciones.h
+
+1563485051 source:/home/alumno/zanoni/tp_laboratorio_1/envios/funciones.c
+	"validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1563485051 source:/home/alumno/zanoni/tp_laboratorio_1/envios/LinkedList.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1563491133 source:/home/alumno/zanoni/tp_laboratorio_1/envios/main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"envios.h"
+	"parser.h"
+	"validaciones.h"
+	"Controller.h"
+
+1563490825 /home/alumno/zanoni/tp_laboratorio_1/envios/Controller.h
+
+1563488833 source:/home/alumno/zanoni/tp_laboratorio_1/envios/parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"envios.h"
+
+1563485051 source:/home/alumno/zanoni/tp_laboratorio_1/envios/validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
+1564688968 source:c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Envios.h"
+	"parser.h"
+	"validaciones.h"
+
+1564686435 c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\linkedlist.h
+
+1564686955 c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\envios.h
+
+1564686436 c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\parser.h
+
+1564686436 c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\validaciones.h
+
+1564686435 source:c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\envios.c
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+	"envios.h"
+	"validaciones.h"
+	"funciones.h"
+
+1564686436 c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\funciones.h
+
+1564686436 source:c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\funciones.c
+	"validaciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1564686435 source:c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1564688124 source:c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"envios.h"
+	"parser.h"
+	"validaciones.h"
+	"Controller.h"
+
+1564689028 c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\controller.h
+
+1564686436 source:c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"envios.h"
+
+1564686436 source:c:\users\e723c0d\desktop\tp_laboratorio_1-master\envios\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+
