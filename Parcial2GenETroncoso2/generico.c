@@ -4,101 +4,71 @@
 #include "valid.h"
 #include <string.h>
 
-Llamada* Llamada_new()
+Partida* Partida_new()
 {
-    return (Llamada*) malloc(sizeof(Llamada));
+    return (Partida*) malloc(sizeof(Partida));
 }
-Llamada* Llamada_newParametros(char *idLlamada, char *fecha, char *numCliente,char *idProblema,char *solucionado)
+Partida* Partida_newParametros(char *idPart, char *fecha, char *tipoJue,char *cantJue,char *durPart)
 {
-    Llamada *retorno = NULL;
-    Llamada *auxLlamada;
-    if(idLlamada != NULL && fecha!=NULL && numCliente!=NULL && idProblema!=NULL && solucionado!=NULL)
+    Partida *retorno = NULL;
+    Partida *auxPartida;
+    if(idPart != NULL && fecha!=NULL && tipoJue!=NULL && cantJue!=NULL && durPart!=NULL)
     {
-        auxLlamada=Llamada_new();
-        if(auxLlamada!=NULL)
+        auxPartida=Partida_new();
+        if(auxPartida!=NULL)
         {
-            if(!Llamada_setNumClienteStr(auxLlamada,numCliente)&&
-               !Llamada_setidStrL(auxLlamada,idLlamada)&&
-               !Llamada_setSol(auxLlamada,solucionado)&&
-               !Llamada_setfecha(auxLlamada,fecha)&&
-               !Llamada_setidStrP(auxLlamada,idProblema))
+            if(!Partida_setidStr(auxPartida,idPart)&&
+               !Partida_setfecha(auxPartida,fecha)&&
+               !Partida_settipoJuegoStr(auxPartida,tipoJue)&&
+               !Partida_settipocantJueStr(auxPartida,cantJue)&&
+               !Partida_setdurPartstr(auxPartida,durPart))
             {
-                retorno=auxLlamada;
+
+                retorno=auxPartida;
 
 
             }
             else
             {
-                Llamada_delete(auxLlamada);
+                Partida_delete(auxPartida);
             }
         }
     }
     return retorno;
 }
-void Llamada_delete(Llamada *auxLlamada)
+void Partida_delete(Partida *auxPartida)
 {
-    if(auxLlamada != NULL)
+    if(auxPartida != NULL)
     {
-        free(auxLlamada);
+        free(auxPartida);
     }
 }
-int Llamada_setidStrL(Llamada* this, char *id)
+
+int Partida_setidStr(Partida* this, char *id)
 {
     int retorno = -1;
     if(this != NULL && isValidNumber(id))
     {
-        retorno = Llamada_setidL(this, atoi(id));
+        retorno = Partida_setid(this, atoi(id));
     }
     return retorno;
 }
-int Llamada_setidL(Llamada* this,int id)
+int Partida_setid(Partida* this,int id)
 {
     int retorno = -1;
     if(this != NULL  && id >=0)
     {
-        this->idLlamada = id;
+        this->idPart = id;
         retorno = 0;
     }
     return retorno;
 }
-int Llamada_getid(Llamada* this,int* id)
+int Partida_getid(Partida* this,int* id)
 {
     int retorno = -1;
     if(this != NULL && id != NULL)
     {
-        *id = this->idLlamada;
-        retorno = 0;
-    }
-    return retorno;
-}
-
-
-
-int Llamada_setNumClienteStr(Llamada* this, char *numCliente)
-{
-    int retorno = -1;
-    if(this != NULL && isValidNumber(numCliente))
-    {
-        retorno = Llamada_setnumCliente(this, atoi(numCliente));
-    }
-    return retorno;
-}
-int Llamada_setnumCliente(Llamada* this,int numCliente)
-{
-    int retorno = -1;
-    if(this != NULL  && numCliente >=0)
-    {
-        this->numCliente = numCliente;
-        retorno = 0;
-    }
-    return retorno;
-}
-int Llamada_getnumCliente(Llamada* this,int* numCliente)
-{
-    int retorno = -1;
-    if(this != NULL && numCliente != NULL)
-    {
-        *numCliente = this->numCliente;
+        *id = this->idPart;
         retorno = 0;
     }
     return retorno;
@@ -108,7 +78,8 @@ int Llamada_getnumCliente(Llamada* this,int* numCliente)
 
 
 
-int Llamada_setfecha(Llamada* this,char* fecha)
+
+int Partida_setfecha(Partida* this,char* fecha)
 {
     int retorno = -1;
     if(this != NULL && isValidFecha(fecha))
@@ -118,7 +89,7 @@ int Llamada_setfecha(Llamada* this,char* fecha)
     }
     return retorno;
 }
-int Llamada_getfecha(Llamada* this,char* fecha)
+int Partida_getfecha(Partida* this,char* fecha)
 {
     int retorno = -1;
     if(this != NULL && fecha != NULL)
@@ -130,57 +101,125 @@ int Llamada_getfecha(Llamada* this,char* fecha)
 }
 
 
-int Llamada_setidStrP(Llamada* this, char *id)
+int Partida_settipoJuegoStr(Partida* this, char *tipoJue)
 {
     int retorno = -1;
-    if(this != NULL && isValidNumber(id))
+    if(this != NULL && isValidNumber(tipoJue))
     {
-        retorno = Llamada_setid(this, atoi(id));
+        retorno = Partida_settipoJue(this, atoi(tipoJue));
     }
     return retorno;
 }
-int Llamada_setid(Llamada* this,int id)
+int Partida_settipoJue(Partida* this,int tipoJue)
 {
     int retorno = -1;
-    if(this != NULL  && id >=0)
+    if(this != NULL  && tipoJue >=0)
     {
-        this->idProblema = id;
+        this->tipoJue = tipoJue;
         retorno = 0;
     }
     return retorno;
 }
-int Llamada_getidP(Llamada* this,int* id)
+int Partida_gettipoJue(Partida* this,int* tipoJue)
 {
     int retorno = -1;
-    if(this != NULL && id != NULL)
+    if(this != NULL && tipoJue != NULL)
     {
-        *id = this->idProblema;
-        retorno = 0;
-    }
-    return retorno;
-}
-
-
-
-
-int Llamada_setSol(Llamada* this,char* sol)
-{
-    int retorno = -1;
-    if(this != NULL && isValidName(sol))
-    {
-        strncpy(this->solucionado,sol,sizeof(this->solucionado));
-        retorno = 0;
-    }
-    return retorno;
-}
-int Llamada_getsol(Llamada* this,char* sol)
-{
-    int retorno = -1;
-    if(this != NULL && sol != NULL)
-    {
-        strncpy(sol, this->solucionado,sizeof(this->solucionado));
+        *tipoJue = this->tipoJue;
         retorno = 0;
     }
     return retorno;
 }
 
+
+
+
+int Partida_settipocantJueStr(Partida* this, char *cantJue)
+{
+    int retorno = -1;
+    if(this != NULL && isValidNumber(cantJue))
+    {
+        retorno = Partida_setcantJue(this, atoi(cantJue));
+    }
+    return retorno;
+}
+int Partida_setcantJue(Partida* this,int cantJue)
+{
+    int retorno = -1;
+    if(this != NULL  && cantJue >=0)
+    {
+        this->cantJue = cantJue;
+        retorno = 0;
+    }
+    return retorno;
+}
+int Partida_getcantJue(Partida* this,int* cantJue)
+{
+    int retorno = -1;
+    if(this != NULL && cantJue != NULL)
+    {
+        *cantJue = this->cantJue;
+        retorno = 0;
+    }
+    return retorno;
+}
+
+
+
+
+
+
+
+int Partida_setdurPartstr(Partida* this, char *durPart)
+{
+    int retorno = -1;
+    if(this != NULL && isValidNumber(durPart))
+    {
+        retorno = Partida_setdurPart(this, atoi(durPart));
+    }
+    return retorno;
+}
+int Partida_setdurPart(Partida* this,int durPart)
+{
+    int retorno = -1;
+    if(this != NULL  && durPart >=0)
+    {
+        this->durPart = durPart;
+        retorno = 0;
+    }
+    return retorno;
+}
+int Partida_getdurPart(Partida* this,int* durPart)
+{
+    int retorno = -1;
+    if(this != NULL && durPart != NULL)
+    {
+        *durPart = this->durPart;
+        retorno = 0;
+    }
+    return retorno;
+}
+
+
+
+
+int Partida_setcosto(Partida* this,int costo)
+{
+    int retorno = -1;
+    if(this != NULL  && costo >=0)
+    {
+        this->costo = costo;
+        retorno = 0;
+    }
+    return retorno;
+}
+int Partida_getcosto(Partida* this,int* costo)
+{
+    int retorno = -1;
+    if(this != NULL && costo != NULL)
+    {
+        *costo = this->costo;
+        retorno = 0;
+    }
+    return retorno;
+}

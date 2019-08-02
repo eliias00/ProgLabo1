@@ -7,13 +7,20 @@
 
 int main()
 {
+
     LinkedList* lista = ll_newLinkedList();
     int option;
+    char nombre[128];
+    char *path;
 
-    do{
+    printf("ingrese nombre de archivo: ");
+    scanf("%s",nombre);
+    do
+    {
         printf("\n1. Cargar archivo");
-        printf("\n2. imprimir llamada");
-        printf("\n3. generar archivo");
+        printf("\n2. imprimir partidas");
+        printf("\n3. imprimir partidas");
+        printf("\n4. genera arch nuevo");
         printf("\n4. salir");
 
 
@@ -22,29 +29,26 @@ int main()
         system("clear");
         switch(option)
         {
-            case 1:
-                controller_loadFromText("data.csv",lista);
-                printf("se ha cargado data.csv(txt)\n");
+        case 1:
+            controller_loadFromText(nombre,lista);
+            printf("se ha cargado data.csv(txt)\n");
 
-                break;
-            case 2:
-             imprimirLlamada(lista);
-                break;
-            case 3:
-                if(!controller_saveAsText("salida.csv",lista))
+            break;
+          case 2:
+                  imprimirPartida(lista);
+              break;
+         case 3:
+                imprimirProm(lista);
+              break;
+        case 4:
+             if(!ll_map(lista,controller_costos))
                 {
-                 printf("se ha generado salida.csv(txt)\n");
-                }
-                else
-                {
-                    printf("nose pudo generar la salida.csv(txt)");
-                }
-                break;
-            case 4:
+                 controller_saveAsText(lista);
+                 }
+            break;
 
-                break;
-
-                }
-    }while(option != 4);
+        }
+    }
+    while(option != 4);
     return 0;
 }
